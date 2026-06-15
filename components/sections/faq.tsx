@@ -58,7 +58,7 @@ export function FAQ() {
           <div className="lg:col-span-4">
             <SectionLabel>FAQ</SectionLabel>
             <Reveal>
-              <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5rem)] leading-[0.8]">
+              <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5rem)] leading-[0.95]">
                 Häufige
                 <br />
                 <span className="text-brand">Fragen</span>

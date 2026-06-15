@@ -34,7 +34,7 @@ export function Boombox() {
             <div className="relative">
               <SectionLabel>Das Duo</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[0.78]">
+                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[0.95]">
                   Boombox-
                   <br />
                   <span className="text-brand">Society</span>

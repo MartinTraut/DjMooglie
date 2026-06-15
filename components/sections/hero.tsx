@@ -35,11 +35,11 @@ export function Hero() {
         <p className="truncate">MOOGLI MOOGLI MOOGLI</p>
       </div>
 
-      <Container className="relative pt-24 sm:pt-28">
+      <Container className="relative pt-8 sm:pt-10">
         {/* Stage: freed-up cutout of Mooglie in front, the big brush MOOGLI
             behind him — his head and torso occlude the centre letters, so the
             word reads "MOO · him · GLI", crisp on the white block. */}
-        <div className="relative mx-auto flex min-h-[74svh] max-w-5xl items-end justify-center">
+        <div className="relative mx-auto flex min-h-[clamp(20rem,42svh,34rem)] max-w-5xl items-end justify-center">
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}

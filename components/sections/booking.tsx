@@ -50,7 +50,7 @@ export function Booking() {
             <div className="relative">
               <SectionLabel>Kontakt & Booking</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[0.78]">
+                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[0.95]">
                   Book
                   <br />
                   <span className="text-brand">Contact</span>

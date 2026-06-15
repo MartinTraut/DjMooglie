@@ -16,7 +16,7 @@ export function Mixtapes() {
             <ChapterNumber n="2" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
             <SectionLabel>Mixtapes · Mixcloud</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.8]">
+              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.95]">
                 Music
               </h2>
             </Reveal>

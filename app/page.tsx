@@ -1,5 +1,6 @@
 import { Nav } from "@/components/site/nav"
 import { Footer } from "@/components/site/footer"
+import { VinylPlayer } from "@/components/site/vinyl-player"
 import { Hero } from "@/components/sections/hero"
 import { Ticker } from "@/components/sections/ticker"
 import { Sound } from "@/components/sections/sound"
@@ -30,6 +31,7 @@ export default function Page() {
         <FAQ />
       </main>
       <Footer />
+      <VinylPlayer />
     </>
   )
 }

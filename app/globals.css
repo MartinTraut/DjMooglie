@@ -222,6 +222,13 @@
         }
     }
 
+    /* Spinning vinyl record on the floating Mixcloud player */
+    @keyframes vinyl-spin {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
     .hairline-grid {
         background-image:
             linear-gradient(to right, var(--border) 1px, transparent 1px),

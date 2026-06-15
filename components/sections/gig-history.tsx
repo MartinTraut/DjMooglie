@@ -21,7 +21,7 @@ export function GigHistory() {
             <div className="relative lg:sticky lg:top-28">
               <SectionLabel>Referenzen · Gig History</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.8]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95]">
                   Referen<span className="text-brand">zen</span>
                 </h2>
               </Reveal>

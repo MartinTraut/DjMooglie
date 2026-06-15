@@ -25,7 +25,7 @@ export function EPK() {
             <ChapterNumber n="5" className="-top-16 right-0 translate-x-1/3" />
             <SectionLabel>Electronic Press Kit</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.8]">
+              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.95]">
                 Press <span className="text-brand">Kit</span>
               </h2>
             </Reveal>

@@ -45,7 +45,7 @@ export function Sound() {
             <div className="relative">
               <SectionLabel>Welcher Sound</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.75rem,7vw,5rem)] leading-[0.82]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,7vw,5rem)] leading-[0.95]">
                   Ein Sound,
                   <br />
                   der <span className="text-brand">zusammen­führt</span>

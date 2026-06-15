@@ -36,6 +36,13 @@ export const site = {
     mixcloudHandle: "DjMoogli",
   },
 
+  // Featured mix played by the floating vinyl player (Mixcloud widget).
+  featuredMix: {
+    title: "Vol. 03",
+    url: "https://www.mixcloud.com/DjMoogli/vol03/",
+    feed: "/DjMoogli/vol03/", // widget feed path (URL-encoded in the iframe)
+  },
+
   management: {
     company: "KOMA Music",
     profileUrl: "https://www.komamusic.de/artists/moogli/",

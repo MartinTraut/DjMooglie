@@ -17,7 +17,7 @@ export function Management() {
             <div className="relative lg:col-span-6">
               <SectionLabel>Management</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.8]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95]">
                   Vertreten durch
                   <br />
                   <span className="text-brand">{m.company}</span>
