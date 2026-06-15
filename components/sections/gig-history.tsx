@@ -16,13 +16,13 @@ export function GigHistory() {
 
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-12">
-          <div className="relative lg:col-span-4">
+          <div className="relative min-w-0 lg:col-span-4">
             <ChapterNumber n="3" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative lg:sticky lg:top-28">
               <SectionLabel>Referenzen · Gig History</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.95]">
-                  Referen<span className="text-brand">zen</span>
+                <h2 className="mt-5 font-brush text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.92]">
+                  Referen<span className="block text-brand">zen</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.08}>

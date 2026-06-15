@@ -39,13 +39,13 @@ export function Hero() {
         {/* Stage: freed-up cutout of Mooglie in front, the big brush MOOGLI
             behind him — his head and torso occlude the centre letters, so the
             word reads "MOO · him · GLI", crisp on the white block. */}
-        <div className="relative mx-auto flex min-h-[clamp(20rem,42svh,34rem)] max-w-5xl items-end justify-center">
+        <div className="relative mx-auto flex min-h-[clamp(24rem,54svh,39rem)] max-w-5xl items-end justify-center">
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: EASE, delay: 0.06 }}
             style={{ y: imgY }}
-            className="relative w-[min(78vw,25rem)]"
+            className="relative w-[min(84vw,29rem)]"
           >
             {/* MOOGLI — wider than him, sitting behind, centred on his face so
                 his head and torso occlude the middle letters */}
@@ -56,7 +56,7 @@ export function Hero() {
               className="pointer-events-none absolute -left-[36%] top-[14%] z-0 w-[172%] text-center font-brush text-brand"
             >
               <span className="sr-only">{site.name} — </span>
-              <span aria-hidden className="block text-[clamp(4.25rem,17vw,14rem)] leading-[0.78]">
+              <span aria-hidden className="block text-[clamp(5rem,19vw,16.5rem)] leading-[0.78]">
                 MOOGLI
               </span>
             </motion.h1>
@@ -67,8 +67,8 @@ export function Hero() {
               width={1100}
               height={1466}
               priority
-              sizes="(max-width: 640px) 78vw, 25rem"
-              className="relative z-10 h-auto w-full select-none object-contain bw-soft drop-shadow-[0_24px_48px_rgba(0,0,0,0.22)]"
+              sizes="(max-width: 640px) 84vw, 29rem"
+              className="relative z-10 h-auto w-full select-none object-contain bw drop-shadow-[0_24px_48px_rgba(0,0,0,0.22)]"
             />
 
             {/* red paint slash over his torso */}

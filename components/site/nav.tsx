@@ -40,19 +40,19 @@ export function Nav() {
           : "border-b border-transparent bg-transparent text-neutral-950"
       )}
     >
-      <Container className="flex h-16 items-center justify-between md:h-20">
+      <Container className="flex h-20 items-center justify-between md:h-24">
         <Link href="#top" className="relative z-10" aria-label={`${site.name} Startseite`}>
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav className="hidden items-center gap-7 md:flex lg:gap-9">
           {nav.map((n) => (
             <Link
               key={n.href}
               href={n.href}
               className={cn(
-                "group relative font-mono text-[11px] font-semibold uppercase tracking-[0.2em] transition-colors",
-                onLight ? "text-neutral-700 hover:text-black" : "text-muted-foreground hover:text-foreground"
+                "group relative text-sm font-extrabold uppercase tracking-[0.1em] transition-colors",
+                onLight ? "text-neutral-900 hover:text-brand" : "text-foreground/90 hover:text-brand"
               )}
             >
               {n.label}
@@ -64,7 +64,7 @@ export function Nav() {
         <div className="hidden md:block">
           <Link
             href="#booking"
-            className="inline-flex items-center gap-2 bg-brand px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-brand-foreground transition-transform duration-200 hover:scale-[1.03] hover:bg-brand/90"
+            className="inline-flex items-center gap-2 bg-brand px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-brand-foreground transition-transform duration-200 hover:scale-[1.03] hover:bg-brand/90"
           >
             Booking
           </Link>
@@ -91,7 +91,7 @@ export function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-16 z-40 bg-background/98 text-foreground backdrop-blur-xl md:hidden"
+            className="fixed inset-0 top-20 z-40 bg-background/98 text-foreground backdrop-blur-xl md:hidden"
           >
             <Container className="flex flex-col gap-1 py-8">
               {nav.map((n, i) => (

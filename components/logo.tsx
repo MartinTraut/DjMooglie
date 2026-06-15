@@ -10,7 +10,7 @@ import { site } from "@/lib/site"
 export function Logo({ className }: { className?: string }) {
   return (
     <span
-      className={cn("font-display text-2xl leading-none tracking-tight sm:text-[1.6rem]", className)}
+      className={cn("font-display text-[1.7rem] leading-none tracking-tight sm:text-3xl", className)}
       aria-label={site.name}
     >
       DJ&nbsp;M<span className="text-brand">OO</span>GLI
