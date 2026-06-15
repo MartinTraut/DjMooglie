@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-display: var(--font-display);
+    --font-brush: var(--font-brush);
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+    --font-heading: var(--font-brush);
+
+    --color-brand: var(--brand);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-brand-deep: var(--brand-deep);
+    --color-ember: var(--ember);
+
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/*
+  DJ MOOGLI — Design tokens.
+  Dark-first urban/hip-hop system. Near-black base, one confident brand red,
+  a restrained ember accent for gradients only. Both :root and .dark carry the
+  same dark values so the club aesthetic is consistent (theme is forced dark).
+*/
+:root,
+.dark {
+    /* Hard street palette: near-pure black, off-white, one blood-red. */
+    --background: oklch(0.09 0.003 264);
+    --foreground: oklch(0.975 0 0);
+
+    --card: oklch(0.145 0.004 264);
+    --card-foreground: oklch(0.975 0 0);
+    --popover: oklch(0.13 0.004 264);
+    --popover-foreground: oklch(0.975 0 0);
+
+    --primary: oklch(0.975 0 0);
+    --primary-foreground: oklch(0.09 0.003 264);
+    --secondary: oklch(0.2 0.004 264);
+    --secondary-foreground: oklch(0.975 0 0);
+    --muted: oklch(0.18 0.004 264);
+    --muted-foreground: oklch(0.66 0.008 264);
+    --accent: oklch(0.2 0.004 264);
+    --accent-foreground: oklch(0.975 0 0);
+
+    /* Brand — blood red (~#E01717), the only color on the site */
+    --brand: oklch(0.565 0.232 27);
+    --brand-foreground: oklch(0.99 0 0);
+    --brand-deep: oklch(0.42 0.19 27);
+    --ember: oklch(0.62 0.21 30);
+
+    --destructive: oklch(0.6 0.22 27);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 14%);
+    --ring: oklch(0.565 0.232 27);
+
+    --chart-1: oklch(0.565 0.232 27);
+    --chart-2: oklch(0.42 0.19 27);
+    --chart-3: oklch(0.556 0 0);
+    --chart-4: oklch(0.439 0 0);
+    --chart-5: oklch(0.269 0 0);
+
+    --radius: 0.4rem;
+
+    --sidebar: oklch(0.13 0.004 264);
+    --sidebar-foreground: oklch(0.975 0 0);
+    --sidebar-primary: oklch(0.565 0.232 27);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: oklch(0.2 0.004 264);
+    --sidebar-accent-foreground: oklch(0.975 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.565 0.232 27);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "ss01", "cv01";
+    }
+    html {
+        @apply font-sans;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+        background: var(--brand);
+        color: var(--brand-foreground);
+    }
+}
+
+@layer utilities {
+    /* Oversized condensed display lockup (bold grotesk) */
+    .font-display {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 0.92;
+    }
+    /* Hand-painted brush headline — the big section words.
+       Protest Guerrilla glyphs are organic and crowd into each other, so we
+       give them generous tracking: no letter overlaps another and the spacing
+       reads evenly across the word. */
+    .font-brush {
+        font-family: var(--font-brush);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: 0.9;
+        word-spacing: 0.04em;
+    }
+    .text-balance {
+        text-wrap: balance;
+    }
+    .text-pretty {
+        text-wrap: pretty;
+    }
+
+    /* Black-and-white photo treatment (red is the only color on the site) */
+    .bw {
+        filter: grayscale(1) contrast(1.12) brightness(0.92);
+    }
+    .bw-soft {
+        filter: grayscale(1) contrast(1.04);
+    }
+
+    /* Blood-red banner strip used for the ticker + section dividers */
+    .banner-red {
+        background:
+            linear-gradient(180deg, var(--brand) 0%, var(--brand-deep) 100%);
+    }
+    /* Thin red rule with a hot center, like the PDF dividers */
+    .rule-red {
+        height: 2px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            var(--brand) 18%,
+            var(--brand) 82%,
+            transparent
+        );
+    }
+
+    /* Faint oversized chapter numeral sitting behind a section title */
+    .chapter-num {
+        font-family: var(--font-display);
+        line-height: 0.8;
+        color: color-mix(in oklch, var(--brand) 26%, transparent);
+        user-select: none;
+    }
+
+    /* Film-grain overlay for the club aesthetic */
+    .grain::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.5;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Brand spotlight gradient used behind hero / CTA */
+    .brand-spot {
+        background:
+            radial-gradient(60% 80% at 50% 0%, color-mix(in oklch, var(--brand) 28%, transparent), transparent 70%),
+            radial-gradient(40% 60% at 85% 30%, color-mix(in oklch, var(--ember) 18%, transparent), transparent 70%);
+    }
+
+    .marquee {
+        animation: marquee var(--marquee-duration, 32s) linear infinite;
+    }
+    .marquee-reverse {
+        animation: marquee var(--marquee-duration, 32s) linear infinite reverse;
+    }
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .hairline-grid {
+        background-image:
+            linear-gradient(to right, var(--border) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+        background-size: 64px 64px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .marquee,
+    .marquee-reverse {
+        animation: none;
+    }
+}

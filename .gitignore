@@ -1,0 +1,44 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# editor / os
+Thumbs.db
+
+# project assets / work scratch
+/pressekit-original/
+/.ref/
+# raw client photo dump (optimised versions live in /public/images)
+/public/Pressekit DJ MOOGLI (1)/
+# third-party reference press kit (not ours to publish)
+/DJ LIL SAINT - OFFICIAL PRESSKIT 2025.pdf
