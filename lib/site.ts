@@ -139,5 +139,4 @@ export const nav = [
   { href: "#referenzen", label: "Referenzen" },
   { href: "#boombox", label: "Boombox-Society" },
   { href: "#epk", label: "EPK" },
-  { href: "#booking", label: "Booking" },
 ] as const;
