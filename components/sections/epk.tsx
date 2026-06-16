@@ -10,6 +10,8 @@ import { BrandLogoImage } from "@/components/logo"
 import { ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 const facts = [
   { k: "Künstlername", v: "DJ Mooglie" },
   { k: "Herkunft", v: "Raum Heilbronn" },
@@ -83,23 +85,32 @@ export function EPK() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.06}>
-              <dl className="panel elevate mt-5 divide-y divide-border/70 overflow-hidden rounded-3xl">
-                {facts.map((f) => (
-                  <div
-                    key={f.k}
-                    className="flex flex-col items-center gap-2 p-6 text-center transition-colors hover:bg-secondary/60 sm:p-7"
-                  >
-                    <dt className="font-mono text-xs uppercase tracking-[0.2em] text-brand">
-                      {f.k}
-                    </dt>
-                    <dd className="text-xl font-semibold leading-snug text-foreground sm:text-2xl">
-                      {f.v}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </Reveal>
+            <motion.dl
+              className="panel elevate mt-5 divide-y divide-border/60 overflow-hidden rounded-3xl"
+              initial={reduce ? undefined : "hidden"}
+              whileInView="show"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }}
+            >
+              {facts.map((f) => (
+                <motion.div
+                  key={f.k}
+                  variants={{
+                    hidden: { opacity: 0, y: 16 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+                  }}
+                  className="group relative flex flex-col items-center gap-2 overflow-hidden p-6 text-center transition-colors duration-300 hover:bg-secondary/50 sm:p-7"
+                >
+                  <dt className="font-mono text-xs uppercase tracking-[0.22em] text-brand transition-transform duration-300 group-hover:-translate-y-0.5">
+                    {f.k}
+                  </dt>
+                  <dd className="text-xl font-semibold leading-snug text-foreground transition-transform duration-300 group-hover:scale-[1.03] sm:text-2xl">
+                    {f.v}
+                  </dd>
+                  <span className="pointer-events-none absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-brand transition-all duration-300 ease-out group-hover:w-20" />
+                </motion.div>
+              ))}
+            </motion.dl>
           </div>
         </div>
       </Container>
