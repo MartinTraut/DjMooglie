@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
-import { Download, FileText, ImageIcon } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { Media } from "@/components/shared/media"
 import { SectionLabel } from "@/components/shared/section-label"
@@ -48,7 +47,8 @@ export function EPK() {
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Alles für Veranstalter und Presse: Bio, Fotos und Logo zum Download.
+              Alles für Veranstalter und Presse auf einen Blick. Bio, Pressefotos
+              und Logo gibt es auf Anfrage über das Booking.
             </p>
           </Reveal>
         </div>
@@ -87,38 +87,20 @@ export function EPK() {
             </Reveal>
 
             <Reveal delay={0.06}>
-              <dl className="panel mt-5 divide-y divide-border/70 overflow-hidden rounded-2xl">
+              <dl className="panel elevate mt-5 divide-y divide-border/70 overflow-hidden rounded-3xl">
                 {facts.map((f) => (
-                  <div key={f.k} className="flex gap-4 p-4 transition-colors hover:bg-secondary/60">
-                    <dt className="w-28 shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                  <div
+                    key={f.k}
+                    className="flex flex-col gap-1 p-5 transition-colors hover:bg-secondary/60 sm:flex-row sm:items-baseline sm:gap-6 sm:p-6"
+                  >
+                    <dt className="w-32 shrink-0 font-mono text-[11px] uppercase tracking-[0.16em] text-brand">
                       {f.k}
                     </dt>
-                    <dd className="text-sm text-foreground">{f.v}</dd>
+                    <dd className="text-base font-medium text-foreground sm:text-lg">{f.v}</dd>
                   </div>
                 ))}
               </dl>
             </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                <DownloadCard
-                  href="#booking"
-                  icon={<FileText className="h-4 w-4" />}
-                  title="Bio & Rider"
-                  note="PDF anfragen"
-                />
-                <DownloadCard
-                  href="#booking"
-                  icon={<ImageIcon className="h-4 w-4" />}
-                  title="Pressefotos"
-                  note="Print-Auflösung"
-                />
-              </div>
-            </Reveal>
-            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground/70">
-              {/* TODO: link to real /press-kit.zip and /logo.png download */}
-              Downloads auf Anfrage über das Booking-Formular
-            </p>
           </div>
         </div>
       </Container>
@@ -126,34 +108,3 @@ export function EPK() {
   )
 }
 
-function DownloadCard({
-  href,
-  icon,
-  title,
-  note,
-}: {
-  href: string
-  icon: React.ReactNode
-  title: string
-  note: string
-}) {
-  return (
-    <a
-      href={href}
-      className="group panel panel-hover flex items-center justify-between rounded-2xl p-4 transition-all duration-200 ease-out hover:-translate-y-0.5"
-    >
-      <span className="flex items-center gap-3">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
-          {icon}
-        </span>
-        <span>
-          <span className="block text-sm font-semibold">{title}</span>
-          <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-            {note}
-          </span>
-        </span>
-      </span>
-      <Download className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-y-0.5 group-hover:text-brand" />
-    </a>
-  )
-}

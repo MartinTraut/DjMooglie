@@ -105,9 +105,9 @@ export function Hero() {
             <span className="text-brand">Hip-Hop</span>{" "}
             <span className="text-neutral-950">DJ</span>
           </p>
-          <p className="mx-auto mt-3 max-w-md text-pretty text-sm leading-relaxed text-neutral-600 sm:text-base">
-            Ich lese den Floor und lege Genre über Genre, bis die Energie die ganze
-            Nacht trägt.
+          <p className="mx-auto mt-3 max-w-lg text-pretty text-sm leading-relaxed text-neutral-600 sm:text-base">
+            Ich lege in Frankfurt, Heilbronn und bundesweit auf. Clubs, Events und
+            private Feiern, von der ersten bis zur letzten Stunde.
           </p>
           <ul className="mx-auto mt-4 flex max-w-lg flex-wrap items-center justify-center gap-2">
             {site.genres.slice(0, 5).map((g) => (

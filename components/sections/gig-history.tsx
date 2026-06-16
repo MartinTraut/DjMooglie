@@ -58,27 +58,32 @@ export function GigHistory() {
           </div>
 
           <div className="lg:col-span-8">
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-4">
               {confirmed.map((g, i) => (
                 <Reveal as="li" key={`${g.venue}-${g.city}`} delay={i * 0.05}>
                   <motion.div
                     whileHover={reduce ? undefined : { x: 6 }}
                     transition={{ duration: 0.25, ease: EASE }}
-                    className="group flex items-center justify-between gap-6 rounded-2xl px-4 py-5 transition-colors hover:bg-secondary/40"
+                    className="group panel panel-hover elevate flex flex-col gap-5 rounded-3xl p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8"
                   >
-                    <div className="flex min-w-0 items-center gap-4">
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-brand/40 bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-110">
-                        <Star className="h-4 w-4 fill-brand" />
+                    <div className="flex min-w-0 items-center gap-5">
+                      <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-brand/40 bg-brand/10 text-brand transition-transform duration-300 group-hover:scale-105">
+                        <Star className="h-6 w-6 fill-brand" />
                       </span>
                       <div className="min-w-0">
-                        <p className="truncate font-display text-2xl uppercase leading-none tracking-tight">
-                          {g.venue} <span className="text-brand">· {g.city}</span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-foreground">
+                          {g.note}
+                        </span>
+                        <p className="mt-2 truncate font-display text-3xl uppercase leading-none tracking-tight sm:text-4xl">
+                          {g.venue}
+                        </p>
+                        <p className="mt-1.5 flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                          <MapPin className="h-3.5 w-3.5 shrink-0 text-brand" />
+                          {g.city}
                         </p>
                       </div>
                     </div>
-                    <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                      {g.note}
-                    </span>
+                    <ArrowUpRight className="hidden h-6 w-6 shrink-0 text-muted-foreground transition-colors group-hover:text-brand sm:block" />
                   </motion.div>
                 </Reveal>
               ))}
