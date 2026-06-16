@@ -123,7 +123,7 @@ export function VinylPlayer() {
       {/* Hidden Mixcloud widget — audio source only, no visible UI. */}
       <iframe
         ref={iframeRef}
-        title={`Mixcloud — ${site.featuredMix.title}`}
+        title={`Mixcloud · ${site.featuredMix.title}`}
         aria-hidden
         tabIndex={-1}
         width={0}
@@ -140,9 +140,9 @@ export function VinylPlayer() {
         <button
           type="button"
           onClick={() => widgetRef.current?.togglePlay()}
-          aria-label={playing ? `Mix pausieren — ${site.featuredMix.title}` : `Mix abspielen — ${site.featuredMix.title}`}
+          aria-label={playing ? `Mix pausieren: ${site.featuredMix.title}` : `Mix abspielen: ${site.featuredMix.title}`}
           aria-pressed={playing}
-          className="group flex items-center gap-0 rounded-full border border-white/10 bg-black/80 p-1.5 pr-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 hover:gap-3 hover:border-brand/40 hover:pr-5"
+          className="group flex items-center gap-0 rounded-full border border-white/10 bg-black/80 p-1.5 pr-1.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06),0_22px_48px_-18px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:gap-3 hover:border-brand/40 hover:pr-5 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_26px_56px_-18px_color-mix(in_oklch,var(--brand)_30%,transparent),0_22px_48px_-18px_rgba(0,0,0,0.7)]"
         >
           <span className="relative grid h-14 w-14 shrink-0 place-items-center">
             <Vinyl spinning={playing} />

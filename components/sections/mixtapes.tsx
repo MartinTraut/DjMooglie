@@ -1,3 +1,7 @@
+"use client"
+
+import { useRef } from "react"
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
 import { ArrowUpRight, Play } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
@@ -5,10 +9,27 @@ import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber, EchoLine } from "@/components/shared/brush"
 import { site } from "@/lib/site"
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 export function Mixtapes() {
+  const reduce = useReducedMotion()
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  })
+  // Giant "MUSIC" echo drifts sideways slower than the page.
+  const echoX = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["-4%", "4%"])
+
   return (
-    <section id="mixtapes" className="relative scroll-mt-20 overflow-hidden border-t border-border py-20 sm:py-28">
-      <EchoLine text="MUSIC" className="absolute -top-2 left-0 right-0 text-[14vw]" />
+    <section
+      ref={sectionRef}
+      id="mixtapes"
+      className="relative scroll-mt-20 overflow-hidden border-t border-border py-24 sm:py-32"
+    >
+      <motion.div style={{ x: echoX }} className="absolute -top-2 left-0 right-0 will-change-transform">
+        <EchoLine text="MUSIC" className="text-[14vw]" />
+      </motion.div>
 
       <Container className="relative">
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
@@ -16,14 +37,14 @@ export function Mixtapes() {
             <ChapterNumber n="2" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
             <SectionLabel>Mixtapes · Mixcloud</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.95]">
+              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[1.05]">
                 Music
               </h2>
             </Reveal>
             <Reveal delay={0.06}>
-              <p className="mt-4 max-w-md text-pretty leading-relaxed text-muted-foreground">
-                Hör rein, bevor du buchst — eine Auswahl aus der Cooky&apos;s-Booth,
-                tropical Heat und späten Latin-Stunden.
+              <p className="mt-4 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
+                Hör rein, bevor du buchst. Eine Auswahl aus der Cooky&apos;s-Booth,
+                tropical Heat und meinen späten Latin-Stunden.
               </p>
             </Reveal>
           </div>
@@ -34,26 +55,31 @@ export function Mixtapes() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-brand"
             >
-              Alle Mixe auf Mixcloud
+              <span className="relative">
+                Alle Mixe auf Mixcloud
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-brand transition-all duration-300 ease-out group-hover:w-full" />
+              </span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-3">
           {site.mixtapes.map((m, i) => (
             <Reveal key={m.title} delay={i * 0.08}>
-              <a
+              <motion.a
                 href={m.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex h-full flex-col justify-between gap-10 bg-card p-7 transition-colors duration-300 hover:bg-secondary"
+                whileHover={reduce ? undefined : { y: -4 }}
+                transition={{ duration: 0.25, ease: EASE }}
+                className="group panel panel-hover elevate relative flex h-full flex-col justify-between gap-10 rounded-2xl p-7"
               >
                 <div className="flex items-start justify-between">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand">
                     {m.tag}
                   </span>
-                  <span className="font-brush text-3xl leading-none text-white/15">
+                  <span className="font-brush text-3xl leading-none text-white/15 transition-colors duration-300 group-hover:text-white/30">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -67,7 +93,7 @@ export function Mixtapes() {
                     Abspielen
                   </span>
                 </div>
-              </a>
+              </motion.a>
             </Reveal>
           ))}
         </div>

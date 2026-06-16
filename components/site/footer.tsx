@@ -4,6 +4,14 @@ import { Container } from "@/components/shared/container"
 import { Waveform } from "@/components/logo"
 import { nav, site } from "@/lib/site"
 
+// Underline-grow + color-shift on hover/focus. The underline scales in from the
+// left over 220ms; under prefers-reduced-motion the transform is neutralised by
+// the global media query, leaving only the color shift.
+const textLink =
+  "relative inline-block text-foreground/80 transition-colors duration-200 hover:text-brand focus-visible:text-brand focus-visible:outline-none " +
+  "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brand " +
+  "after:transition-transform after:duration-[220ms] after:ease-out hover:after:scale-x-100 focus-visible:after:scale-x-100 motion-reduce:after:transition-none"
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
@@ -37,6 +45,10 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
               {site.region}. {site.tagline}
             </p>
+            <p className="mt-4 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
+              Ich lege da auf, wo Energie zählt. Schreib mir, dann sprechen wir
+              über deinen Abend.
+            </p>
             <div className="mt-6 flex items-center gap-3">
               <SocialIcon href={site.socials.instagram} label="Instagram">
                 <InstagramIcon className="h-4 w-4" />
@@ -57,7 +69,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="text-foreground/80 transition-colors hover:text-brand">
+                  <Link href={n.href} className={textLink}>
                     {n.label}
                   </Link>
                 </li>
@@ -71,17 +83,17 @@ export function Footer() {
             </p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <a href={`mailto:${site.email}`} className="text-foreground/80 transition-colors hover:text-brand">
+                <a href={`mailto:${site.email}`} className={textLink}>
                   {site.email}
                 </a>
               </li>
               <li>
-                <Link href="/impressum" className="text-foreground/80 transition-colors hover:text-brand">
+                <Link href="/impressum" className={textLink}>
                   Impressum
                 </Link>
               </li>
               <li>
-                <Link href="/datenschutz" className="text-foreground/80 transition-colors hover:text-brand">
+                <Link href="/datenschutz" className={textLink}>
                   Datenschutz
                 </Link>
               </li>
@@ -99,7 +111,7 @@ export function Footer() {
               href={site.management.siteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/80 transition-colors hover:text-brand"
+              className={textLink}
             >
               {site.management.company}
             </a>
@@ -125,7 +137,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex h-10 w-10 items-center justify-center border border-border text-foreground transition-all duration-200 hover:border-brand hover:bg-brand hover:text-brand-foreground"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-brand-foreground focus-visible:-translate-y-0.5 focus-visible:border-brand focus-visible:bg-brand focus-visible:text-brand-foreground focus-visible:outline-none motion-reduce:hover:translate-y-0 motion-reduce:focus-visible:translate-y-0"
     >
       {children}
     </a>

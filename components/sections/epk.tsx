@@ -1,3 +1,7 @@
+"use client"
+
+import * as React from "react"
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import { Download, FileText, ImageIcon } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { Media } from "@/components/shared/media"
@@ -17,43 +21,59 @@ const facts = [
 ]
 
 export function EPK() {
+  const reduce = useReducedMotion()
+  const ref = React.useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+  const yA = useTransform(scrollYProgress, [0, 1], ["-4%", "5%"])
+  const yB = useTransform(scrollYProgress, [0, 1], ["5%", "-4%"])
+
   return (
-    <section id="epk" className="relative scroll-mt-20 overflow-hidden border-t border-border bg-card/30 py-20 sm:py-28">
+    <section
+      id="epk"
+      className="relative scroll-mt-20 overflow-hidden border-t border-border bg-card/30 py-20 sm:py-28"
+    >
       <Container className="relative">
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="relative">
             <ChapterNumber n="5" className="-top-16 right-0 translate-x-1/3" />
             <SectionLabel>Electronic Press Kit</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[0.95]">
+              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[1.05]">
                 Press <span className="text-brand">Kit</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Alles für Veranstalter & Presse — Bio, Fotos und Logo zum Download.
+              Alles für Veranstalter und Presse: Bio, Fotos und Logo zum Download.
             </p>
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-12">
+        <div ref={ref} className="mt-12 grid gap-5 lg:grid-cols-12">
           {/* Press photos */}
           <Reveal className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-4">
               {site.assets.epk.map((src, i) => (
-                <Media
+                <motion.div
                   key={i}
-                  src={src}
-                  alt={`Pressefoto DJ Mooglie ${i + 1}`}
-                  label={`Pressefoto ${i + 1}`}
-                  sizes="(max-width: 1024px) 45vw, 30vw"
-                  className={
-                    i % 3 === 0
-                      ? "aspect-[3/4] border border-border"
-                      : "aspect-square border border-border"
-                  }
-                />
+                  style={reduce ? undefined : { y: i % 2 === 0 ? yA : yB }}
+                  className="group elevate overflow-hidden rounded-2xl border border-border"
+                >
+                  <Media
+                    src={src}
+                    alt={`Pressefoto DJ Mooglie ${i + 1}`}
+                    label={`Pressefoto ${i + 1}`}
+                    sizes="(max-width: 1024px) 45vw, 30vw"
+                    className={
+                      (i % 3 === 0 ? "aspect-[3/4]" : "aspect-square") +
+                      " transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                    }
+                  />
+                </motion.div>
               ))}
             </div>
           </Reveal>
@@ -61,15 +81,15 @@ export function EPK() {
           {/* Real logo + facts + downloads */}
           <div className="lg:col-span-5">
             <Reveal>
-              <div className="flex items-center justify-center border border-border bg-white px-6 py-8">
+              <div className="elevate flex items-center justify-center rounded-2xl border border-border bg-white px-6 py-8">
                 <BrandLogoImage className="max-w-[16rem]" />
               </div>
             </Reveal>
 
             <Reveal delay={0.06}>
-              <dl className="mt-5 divide-y divide-border overflow-hidden border border-border bg-card">
+              <dl className="panel mt-5 divide-y divide-border/70 overflow-hidden rounded-2xl">
                 {facts.map((f) => (
-                  <div key={f.k} className="flex gap-4 p-4">
+                  <div key={f.k} className="flex gap-4 p-4 transition-colors hover:bg-secondary/60">
                     <dt className="w-28 shrink-0 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
                       {f.k}
                     </dt>
@@ -120,10 +140,12 @@ function DownloadCard({
   return (
     <a
       href={href}
-      className="group flex items-center justify-between border border-border bg-background p-4 transition-colors hover:border-brand"
+      className="group panel panel-hover flex items-center justify-between rounded-2xl p-4 transition-all duration-200 ease-out hover:-translate-y-0.5"
     >
       <span className="flex items-center gap-3">
-        <span className="grid h-9 w-9 place-items-center bg-secondary text-brand">{icon}</span>
+        <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
+          {icon}
+        </span>
         <span>
           <span className="block text-sm font-semibold">{title}</span>
           <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -131,7 +153,7 @@ function DownloadCard({
           </span>
         </span>
       </span>
-      <Download className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-brand" />
+      <Download className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-y-0.5 group-hover:text-brand" />
     </a>
   )
 }

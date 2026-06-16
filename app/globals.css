@@ -78,7 +78,8 @@
     --secondary: oklch(0.2 0.004 264);
     --secondary-foreground: oklch(0.975 0 0);
     --muted: oklch(0.18 0.004 264);
-    --muted-foreground: oklch(0.66 0.008 264);
+    /* Body/secondary text — lifted for readability on the near-black base. */
+    --muted-foreground: oklch(0.75 0.011 264);
     --accent: oklch(0.2 0.004 264);
     --accent-foreground: oklch(0.975 0 0);
 
@@ -99,7 +100,7 @@
     --chart-4: oklch(0.439 0 0);
     --chart-5: oklch(0.269 0 0);
 
-    --radius: 0.4rem;
+    --radius: 0.95rem;
 
     --sidebar: oklch(0.13 0.004 264);
     --sidebar-foreground: oklch(0.975 0 0);
@@ -123,6 +124,20 @@
         @apply font-sans;
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
+    }
+    /* Lenis smooth-scroll: JS takes over, so disable native smoothing while active */
+    html.lenis,
+    html.lenis body {
+        height: auto;
+    }
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+        overflow: hidden;
     }
     ::selection {
         background: var(--brand);
@@ -227,6 +242,36 @@
         to {
             transform: rotate(1turn);
         }
+    }
+
+    /* High-end soft elevation — a faint inner top-light plus a deep, very soft
+       drop. Gives cards real depth without a hard box edge. */
+    .elevate {
+        box-shadow:
+            inset 0 1px 0 0 oklch(1 0 0 / 7%),
+            0 24px 50px -28px oklch(0 0 0 / 0.75);
+    }
+    /* Premium glass surface for cards/tiles: subtle gradient skin, hairline
+       border, blur. Round it with rounded-2xl/3xl on the element. */
+    .panel {
+        background:
+            linear-gradient(180deg, oklch(1 0 0 / 5%), oklch(1 0 0 / 1.5%)),
+            var(--card);
+        border: 1px solid oklch(1 0 0 / 9%);
+        backdrop-filter: blur(8px);
+    }
+    .panel-hover {
+        transition:
+            border-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .panel-hover:hover {
+        border-color: color-mix(in oklch, var(--brand) 45%, transparent);
+        box-shadow:
+            inset 0 1px 0 0 oklch(1 0 0 / 9%),
+            0 28px 60px -30px color-mix(in oklch, var(--brand) 35%, transparent),
+            0 24px 50px -28px oklch(0 0 0 / 0.7);
     }
 
     .hairline-grid {

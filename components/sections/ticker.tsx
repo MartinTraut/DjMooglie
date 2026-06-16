@@ -2,7 +2,7 @@ import { Marquee } from "@/components/shared/marquee"
 import { site } from "@/lib/site"
 
 const items = [
-  "Neues Mixtape — Urban Flavour",
+  "Neues Mixtape: Urban Flavour",
   "Booking 2026 offen",
   `Resident · ${site.resident}`,
   `Folge ${site.socials.instagramHandle}`,
@@ -12,7 +12,7 @@ const items = [
 
 export function Ticker() {
   return (
-    <div className="banner-red relative grain border-y border-black/20 py-3.5 text-brand-foreground">
+    <div className="banner-red relative grain border-y border-white/10 py-3.5 text-brand-foreground">
       <Marquee durationSeconds={34}>
         {items.map((t, i) => (
           <span key={i} className="flex items-center">

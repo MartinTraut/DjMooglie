@@ -17,7 +17,24 @@ export const site = {
 
   tagline: "Hip-Hop. R'n'B. Afro. Baile Funk. Latin.",
   shortBio:
-    "Urban DJ aus dem Raum Heilbronn und Resident im Frankfurter Cooky's Club. Mooglie verbindet Hip-Hop, R'n'B, Afro, Baile Funk und Latin zu einem facettenreichen Groove mit Gespür für den richtigen Moment auf dem Dancefloor.",
+    "Ich bin Mooglie, Urban-DJ aus dem Raum Heilbronn und Resident im Frankfurter Cooky's Club. Ich lese den Floor und lege Hip-Hop, R'n'B, Afro, Baile Funk und Latin so übereinander, dass die Energie über die ganze Nacht trägt.",
+
+  // GEO / Local-SEO: Standort und Einzugsgebiet als echte Daten fürs Schema.
+  geo: {
+    base: "Heilbronn",
+    region: "Baden-Württemberg",
+    countryCode: "DE",
+    latitude: 49.1427,
+    longitude: 9.2109,
+    cities: [
+      "Frankfurt am Main",
+      "Heilbronn",
+      "Stuttgart",
+      "Mannheim",
+      "Heidelberg",
+      "Heilbronn-Franken",
+    ],
+  },
 
   genres: [
     "Hip-Hop",
@@ -57,7 +74,7 @@ export const site = {
     name: "Boombox-Society",
     partner: "DJ Soulrocca",
     description:
-      "Als Duo Boombox-Society stehen Mooglie und DJ Soulrocca gemeinsam hinter den Decks — doppelte Energie, zwei Handschriften, ein durchgehender Flow für Clubnächte und Events.",
+      "Als Boombox-Society stehe ich gemeinsam mit DJ Soulrocca hinter den Decks. Zwei Handschriften, doppelte Energie und ein durchgehender Flow für Clubnächte und Events.",
     // TODO: add Boombox-Society links / Mixcloud / Instagram if available
   },
 
@@ -66,13 +83,13 @@ export const site = {
   mixtapes: [
     {
       title: "Urban Heat Vol. 1",
-      desc: "Hip-Hop & R'n'B Selection — straight aus der Cooky's-Booth.",
+      desc: "Hip-Hop und R'n'B Selection, straight aus der Cooky's-Booth.",
       tag: "Hip-Hop / R'n'B",
       href: "https://www.mixcloud.com/DjMoogli/", // TODO
     },
     {
       title: "Afro x Baile Funk",
-      desc: "Tropical Heat — Afrobeats trifft brasilianischen Baile Funk.",
+      desc: "Tropical Heat, Afrobeats trifft brasilianischen Baile Funk.",
       tag: "Afro / Baile Funk",
       href: "https://www.mixcloud.com/DjMoogli/", // TODO
     },

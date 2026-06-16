@@ -2,12 +2,12 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { nav, site } from "@/lib/site"
 import { Container } from "@/components/shared/container"
-import { Logo } from "@/components/logo"
 
 export function Nav() {
   const [scrolled, setScrolled] = React.useState(false)
@@ -41,8 +41,37 @@ export function Nav() {
       )}
     >
       <Container className="flex h-20 items-center justify-between md:h-24">
-        <Link href="#top" className="relative z-10" aria-label={`${site.name} Startseite`}>
-          <Logo />
+        <Link
+          href="#top"
+          className="group relative z-10 -my-1 block"
+          aria-label={`${site.name} Startseite`}
+        >
+          {/* Real MOOGLI mark. Full-colour over the white hero, white silhouette
+              once the bar turns dark on scroll. Crossfaded between the two. */}
+          <span className="relative block h-12 w-[132px] transition-transform duration-300 group-hover:scale-[1.04] sm:h-14 sm:w-[150px] md:h-[3.75rem] md:w-[166px]">
+            <Image
+              src="/images/logo-mark.png"
+              alt={`${site.name} Logo`}
+              fill
+              priority
+              sizes="166px"
+              className={cn(
+                "object-contain object-left transition-opacity duration-300",
+                onLight ? "opacity-100" : "opacity-0"
+              )}
+            />
+            <Image
+              src="/images/logo-mark-white.png"
+              alt=""
+              aria-hidden
+              fill
+              sizes="166px"
+              className={cn(
+                "object-contain object-left transition-opacity duration-300",
+                onLight ? "opacity-0" : "opacity-100"
+              )}
+            />
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex lg:gap-9">
@@ -64,7 +93,7 @@ export function Nav() {
         <div className="hidden md:block">
           <Link
             href="#booking"
-            className="inline-flex items-center gap-2 bg-brand px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-brand-foreground transition-transform duration-200 hover:scale-[1.03] hover:bg-brand/90"
+            className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-brand-foreground shadow-[0_10px_30px_-12px_color-mix(in_oklch,var(--brand)_70%,transparent)] transition-all duration-200 hover:scale-[1.03] hover:bg-brand/90"
           >
             Booking
           </Link>
@@ -74,7 +103,7 @@ export function Nav() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           className={cn(
-            "relative z-10 inline-flex h-10 w-10 items-center justify-center border md:hidden",
+            "relative z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border md:hidden",
             onLight ? "border-neutral-300 text-neutral-950" : "border-border text-foreground"
           )}
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -113,7 +142,7 @@ export function Nav() {
               <Link
                 href="#booking"
                 onClick={() => setOpen(false)}
-                className="mt-6 inline-flex items-center justify-center bg-brand px-5 py-4 text-base font-bold uppercase tracking-[0.12em] text-brand-foreground"
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-brand px-5 py-4 text-base font-bold uppercase tracking-[0.12em] text-brand-foreground"
               >
                 Booking anfragen
               </Link>

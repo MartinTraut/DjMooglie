@@ -10,7 +10,7 @@ import { site } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
 const inputCls =
-  "w-full border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors focus:border-brand focus:outline-none focus:ring-2 focus:ring-ring/40"
+  "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-all duration-200 ease-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40 hover:border-muted-foreground/40"
 const labelCls = "mb-2 block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground"
 
 export function Booking() {
@@ -21,7 +21,7 @@ export function Booking() {
     const data = new FormData(e.currentTarget)
     const get = (k: string) => String(data.get(k) ?? "").trim()
 
-    const subject = `Booking-Anfrage — ${get("event") || "Event"} · ${get("date") || "Datum offen"}`
+    const subject = `Booking-Anfrage · ${get("event") || "Event"} · ${get("date") || "Datum offen"}`
     const body = [
       `Name: ${get("name")}`,
       `E-Mail: ${get("email")}`,
@@ -50,7 +50,7 @@ export function Booking() {
             <div className="relative">
               <SectionLabel>Kontakt & Booking</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[0.95]">
+                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[1.05]">
                   Book
                   <br />
                   <span className="text-brand">Contact</span>
@@ -58,9 +58,9 @@ export function Booking() {
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
-                  Club-Night, Festival, Firmenevent oder Private Party? Schick die
-                  Eckdaten und du bekommst zeitnah eine Rückmeldung — direkt oder
-                  über das Management.
+                  Club-Night, Festival, Firmenevent oder Private Party? Schick mir
+                  die Eckdaten, du bekommst zeitnah eine Rückmeldung, direkt von
+                  mir oder über mein Management.
                 </p>
               </Reveal>
 
@@ -68,9 +68,9 @@ export function Booking() {
                 <div className="mt-8 space-y-3">
                   <a
                     href={`mailto:${site.email}`}
-                    className="group flex items-center gap-4 border border-border bg-card p-4 transition-colors hover:border-brand"
+                    className="group panel panel-hover flex items-center gap-4 rounded-2xl p-4 transition-all duration-200 ease-out hover:-translate-y-0.5"
                   >
-                    <span className="grid h-10 w-10 place-items-center bg-secondary text-brand">
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
                       <Mail className="h-4 w-4" />
                     </span>
                     <span>
@@ -82,9 +82,9 @@ export function Booking() {
                   </a>
                   <a
                     href={`tel:${site.management.phoneHref}`}
-                    className="group flex items-center gap-4 border border-border bg-card p-4 transition-colors hover:border-brand"
+                    className="group panel panel-hover flex items-center gap-4 rounded-2xl p-4 transition-all duration-200 ease-out hover:-translate-y-0.5"
                   >
-                    <span className="grid h-10 w-10 place-items-center bg-secondary text-brand">
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
                       <Phone className="h-4 w-4" />
                     </span>
                     <span>
@@ -101,7 +101,7 @@ export function Booking() {
 
           {/* Form */}
           <Reveal delay={0.1} className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="border border-border bg-card p-6 sm:p-8">
+            <form onSubmit={handleSubmit} className="panel elevate rounded-3xl p-6 sm:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Name *">
                   <input name="name" required placeholder="Dein Name" className={inputCls} />
@@ -135,9 +135,13 @@ export function Booking() {
               <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-brand px-7 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-foreground transition-transform duration-200 hover:scale-[1.03] hover:bg-brand/90"
+                  className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-foreground shadow-[0_14px_34px_-14px_color-mix(in_oklch,var(--brand)_75%,transparent)] transition-all duration-200 ease-out hover:scale-[1.03] hover:bg-brand/90 active:scale-[0.99]"
                 >
-                  {sent ? <Check className="h-4 w-4" /> : <Send className="h-4 w-4" />}
+                  {sent ? (
+                    <Check className="h-4 w-4" />
+                  ) : (
+                    <Send className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  )}
                   {sent ? "Mail geöffnet" : "Anfrage senden"}
                 </button>
                 <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">

@@ -14,7 +14,7 @@ export function SectionLabel({
         className
       )}
     >
-      <span className="h-2.5 w-2.5 shrink-0 bg-brand" aria-hidden />
+      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-brand" aria-hidden />
       {children}
     </span>
   )

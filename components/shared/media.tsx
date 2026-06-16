@@ -25,7 +25,7 @@ export function Media({
   bw?: boolean
 }) {
   return (
-    <div className={cn("relative overflow-hidden bg-card grain", className)}>
+    <div className={cn("relative overflow-hidden rounded-2xl bg-card grain", className)}>
       {src ? (
         <Image
           src={src}
