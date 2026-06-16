@@ -68,10 +68,7 @@ export function EPK() {
                     alt={`Pressefoto DJ Mooglie ${i + 1}`}
                     label={`Pressefoto ${i + 1}`}
                     sizes="(max-width: 1024px) 45vw, 30vw"
-                    className={
-                      (i % 3 === 0 ? "aspect-[3/4]" : "aspect-square") +
-                      " transition-transform duration-500 ease-out group-hover:scale-[1.05]"
-                    }
+                    className="aspect-[2/3] transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                   />
                 </motion.div>
               ))}
@@ -91,12 +88,14 @@ export function EPK() {
                 {facts.map((f) => (
                   <div
                     key={f.k}
-                    className="flex flex-col gap-1 p-5 transition-colors hover:bg-secondary/60 sm:flex-row sm:items-baseline sm:gap-6 sm:p-6"
+                    className="flex flex-col items-center gap-2 p-6 text-center transition-colors hover:bg-secondary/60 sm:p-7"
                   >
-                    <dt className="w-32 shrink-0 font-mono text-[11px] uppercase tracking-[0.16em] text-brand">
+                    <dt className="font-mono text-xs uppercase tracking-[0.2em] text-brand">
                       {f.k}
                     </dt>
-                    <dd className="text-base font-medium text-foreground sm:text-lg">{f.v}</dd>
+                    <dd className="text-xl font-semibold leading-snug text-foreground sm:text-2xl">
+                      {f.v}
+                    </dd>
                   </div>
                 ))}
               </dl>
