@@ -65,6 +65,14 @@ export function VinylPlayer() {
     }
   }, [])
 
+  const safePause = useCallback(() => {
+    try {
+      widgetRef.current?.pause()
+    } catch {
+      /* widget may not be ready yet — nothing to pause */
+    }
+  }, [])
+
   // Boot the Mixcloud widget once the iframe is in the DOM.
   useEffect(() => {
     let cancelled = false
@@ -117,6 +125,22 @@ export function VinylPlayer() {
       window.removeEventListener("scroll", kick)
     }
   }, [ready, playing, safePlay])
+
+  // Stop the music as soon as the visitor leaves the page (switches tab,
+  // minimises, or navigates away). We don't auto-resume on return — the vinyl
+  // button stays the deliberate control.
+  useEffect(() => {
+    if (!ready) return
+    const onHide = () => {
+      if (document.visibilityState === "hidden") safePause()
+    }
+    document.addEventListener("visibilitychange", onHide)
+    window.addEventListener("pagehide", safePause)
+    return () => {
+      document.removeEventListener("visibilitychange", onHide)
+      window.removeEventListener("pagehide", safePause)
+    }
+  }, [ready, safePause])
 
   return (
     <>
