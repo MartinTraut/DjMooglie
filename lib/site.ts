@@ -101,13 +101,31 @@ export const site = {
     },
   ],
 
-  // Gig history / references. Cooky's Club residency is verified.
-  // The rest are TODO placeholders for the client to confirm.
+  // Gig history / references. Cooky's Club is the verified residency and the
+  // headline reference; the rest are confirmed guest gigs across clubs and
+  // großraumdiscos in DE. Names/cities researched & cleaned (see notes in chat).
   gigs: [
-    { venue: "Cooky's Club", city: "Frankfurt", note: "Resident DJ", verified: true },
-    { venue: "TODO: Club / Event", city: "TODO", note: "Gastauftritt", verified: false },
-    { venue: "TODO: Festival", city: "TODO", note: "Stage", verified: false },
-    { venue: "TODO: Private / Corporate Event", city: "TODO", note: "Booking", verified: false },
+    { venue: "Cooky's", city: "Frankfurt", note: "Resident DJ", verified: true },
+    { venue: "Tante Suzie", city: "Schweinfurt", note: "Club", verified: true },
+    { venue: "VYBZ", city: "Gründau", note: "Club", verified: true },
+    { venue: "Wonders", city: "Stuttgart", note: "Club", verified: true },
+    { venue: "Club Kaiser", city: "Heilbronn", note: "Club", verified: true },
+    { venue: "Green Door", city: "Heilbronn", note: "Club", verified: true },
+    { venue: "La Boom", city: "Heilbronn", note: "Diskothek", verified: true },
+    { venue: "Musikpark", city: "Pforzheim", note: "Großraumdisco", verified: true },
+    { venue: "Malinki", city: "Bad Rappenau", note: "Club", verified: true },
+    { venue: "Kinki Palace", city: "Sinsheim", note: "Diskothek", verified: true },
+    { venue: "Wilde Heimat", city: "Koblenz", note: "Club", verified: true },
+    { venue: "Zenit", city: "Koblenz", note: "Club", verified: true },
+    { venue: "Diamonds", city: "Köln", note: "Club", verified: true },
+    { venue: "Herbrand's", city: "Köln", note: "Club", verified: true },
+    { venue: "Vamos", city: "Bamberg", note: "Club", verified: true },
+    { venue: "Neon Beach", city: "Mannheim", note: "Beach-Club", verified: true },
+    { venue: "Nachtschicht", city: "Kaiserslautern", note: "Großraumdisco", verified: true },
+    { venue: "Ohana Lounge", city: "Karlsruhe", note: "Lounge", verified: true },
+    { venue: "Munchies", city: "Frankfurt", note: "Club", verified: true },
+    { venue: "Das Wohnzimmer", city: "Wiesbaden", note: "Club", verified: true },
+    { venue: "Liebig", city: "Gießen", note: "Clubbar", verified: true },
   ],
 
   /**
