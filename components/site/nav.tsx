@@ -102,14 +102,7 @@ export function Nav() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className={cn(
-            "relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors md:hidden",
-            open
-              ? "border-border text-foreground"
-              : onLight
-                ? "border-neutral-300 text-neutral-950"
-                : "border-border text-foreground"
-          )}
+          className="relative z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-brand-foreground shadow-[0_8px_24px_-10px_color-mix(in_oklch,var(--brand)_75%,transparent)] transition-transform active:scale-95 md:hidden"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={open}
         >
