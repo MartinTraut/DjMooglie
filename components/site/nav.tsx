@@ -20,9 +20,20 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  // Lock the page while the full-screen menu is open. Lenis drives scrolling,
+  // so we stop its RAF loop (a plain body overflow:hidden fights Lenis and makes
+  // the page "stick"). Body overflow is the fallback when Lenis is absent
+  // (reduced-motion). Both are restored on close.
   React.useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : ""
+    if (open) {
+      window.__lenis?.stop()
+      document.body.style.overflow = "hidden"
+    } else {
+      window.__lenis?.start()
+      document.body.style.overflow = ""
+    }
     return () => {
+      window.__lenis?.start()
       document.body.style.overflow = ""
     }
   }, [open])
@@ -32,9 +43,10 @@ export function Nav() {
   const onLight = !scrolled && !open
 
   return (
+    <>
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-[70] transition-all duration-300",
         scrolled || open
           ? "border-b border-border bg-background/85 text-foreground backdrop-blur-xl"
           : "border-b border-transparent bg-transparent text-neutral-950"
@@ -126,15 +138,21 @@ export function Nav() {
           </span>
         </button>
       </Container>
+    </header>
 
-      <AnimatePresence>
+    {/* Full-screen mobile menu — rendered OUTSIDE the header so the header's
+        backdrop-filter doesn't trap this fixed overlay inside the 80px bar.
+        Sits above the page (incl. the z-50 floating player) but below the
+        header bar (z-70) so the red close button stays tappable. */}
+    <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background text-foreground md:hidden"
+            data-lenis-prevent
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-background text-foreground md:hidden"
           >
             {/* Brand spotlight + grain to match the hero aesthetic */}
             <div className="pointer-events-none absolute inset-0 brand-spot opacity-50" aria-hidden />
@@ -220,7 +238,7 @@ export function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }
 

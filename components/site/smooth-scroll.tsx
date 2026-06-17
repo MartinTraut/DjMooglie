@@ -3,6 +3,14 @@
 import { useEffect } from "react"
 import Lenis from "lenis"
 
+// Shared Lenis handle so other components (e.g. the mobile menu) can pause
+// inertia scrolling while an overlay is open without prop-drilling.
+declare global {
+  interface Window {
+    __lenis?: Lenis
+  }
+}
+
 /**
  * Site-wide inertia scrolling. Lenis drives a single RAF loop and dispatches
  * native scroll events, so framer-motion's useScroll/useTransform parallax keeps
@@ -20,6 +28,7 @@ export function SmoothScroll() {
       smoothWheel: true,
       touchMultiplier: 1.6,
     })
+    window.__lenis = lenis
 
     let frame = 0
     const raf = (time: number) => {
@@ -44,6 +53,7 @@ export function SmoothScroll() {
       cancelAnimationFrame(frame)
       document.removeEventListener("click", onClick)
       lenis.destroy()
+      if (window.__lenis === lenis) delete window.__lenis
     }
   }, [])
 
