@@ -47,7 +47,7 @@ export function Sound() {
     >
       {/* Full-bleed genre marquee in brush type */}
       <div className="banner-red grain border-y border-black/20 py-5 text-brand-foreground">
-        <Marquee durationSeconds={26} className="[mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <Marquee reverse durationSeconds={26} className="[mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
           {[...site.genres, ...site.genres].map((g, i) => (
             <span key={i} className="flex items-center gap-6 px-6">
               <span className="font-brush text-4xl leading-none sm:text-5xl">{g}</span>

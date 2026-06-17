@@ -4,6 +4,7 @@ import { VinylPlayer } from "@/components/site/vinyl-player"
 import { Hero } from "@/components/sections/hero"
 import { Ticker } from "@/components/sections/ticker"
 import { Sound } from "@/components/sections/sound"
+import { About } from "@/components/sections/about"
 import { Stats } from "@/components/sections/stats"
 import { Mixtapes } from "@/components/sections/mixtapes"
 import { GigHistory } from "@/components/sections/gig-history"
@@ -18,9 +19,15 @@ export default function Page() {
     <>
       <Nav />
       <main>
-        <Hero />
-        <Ticker />
+        {/* Hero + first ticker fill exactly one viewport, so the red news-ticker
+            always lands on the bottom edge and the genre marquee below it only
+            appears on scroll — independent of the visitor's screen height. */}
+        <div className="flex min-h-svh flex-col">
+          <Hero />
+          <Ticker />
+        </div>
         <Sound />
+        <About />
         <Stats />
         <Mixtapes />
         <GigHistory />

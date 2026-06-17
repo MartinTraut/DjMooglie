@@ -48,7 +48,7 @@ export function EPK() {
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="max-w-sm text-pretty text-base leading-relaxed text-foreground/80 sm:pb-2 sm:text-right sm:text-lg">
               Alles für Veranstalter und Presse auf einen Blick. Bio, Pressefotos
               und Logo gibt es auf Anfrage über das Booking.
             </p>

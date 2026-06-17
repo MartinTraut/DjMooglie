@@ -72,10 +72,45 @@ export const site = {
 
   duo: {
     name: "Boombox-Society",
+    tagline: "The Urban Sound Experience",
+    claim: "Zwei Artists. Eine Vision. Maximale Energie.",
     partner: "DJ Soulrocca",
+    partnerInstagram: "https://www.instagram.com/djsoulrocca/",
+    partnerInstagramHandle: "djsoulrocca",
     description:
-      "Als Boombox-Society stehe ich gemeinsam mit DJ Soulrocca hinter den Decks. Zwei Handschriften, doppelte Energie und ein durchgehender Flow für Clubnächte und Events.",
-    // TODO: add Boombox-Society links / Mixcloud / Instagram if available
+      "Als Boombox-Society stehe ich gemeinsam mit DJ Soulrocca hinter den Decks. Gebündelte Expertise, perfekte musikalische Synergie und ein präzises Gespür für den Dancefloor, das die Energie von der ersten bis zur letzten Minute hochhält.",
+    signatureSound:
+      "Ein treibender, clubtauglicher Mix aus feinstem Hip-Hop, R'n'B, Baile, Amapiano, Shatta, energetischem Afro und pulsierenden Latin-Beats.",
+    genres: ["Hip-Hop", "R'n'B", "Baile", "Amapiano", "Shatta", "Afro", "Latin"],
+    // Marquee references from the Boombox-Society press kit. International
+    // highlights lead, the rest follow. Source: artist EPK (Boombox-Society).
+    venueHighlights: ["Eden Ibiza", "Swag Ibiza", "Panama Amsterdam", "Cocoon Frankfurt"],
+    venues: [
+      "Cooky's Frankfurt",
+      "Palais im Zoo Frankfurt",
+      "Match Club München",
+      "Pure Stuttgart",
+      "Wonders Stuttgart",
+      "Halle02 Heidelberg",
+      "En Vogue Karlsruhe",
+      "Musikpark Heilbronn",
+      "Hip-Island Heilbronn",
+      "Rheingold Düsseldorf",
+      "Malinki Bad Rappenau",
+      "Amici Stuttgart",
+      "Vamos Bamberg",
+      "VYBZ Gründau",
+      "Nachtschicht Kaiserslautern",
+      "Diamonds Köln",
+    ],
+  },
+
+  // "Über mich" intro — bundesweite Reichweite + persönliche Handschrift.
+  about: {
+    kicker: "Über mich",
+    title: "Bundesweit im Einsatz.",
+    titleAccent: "Zu Hause in den Clubs.",
+    body: "Ob in Frankfurt, Stuttgart, Heilbronn oder quer durch die Republik: Als DJ Moogli liefere ich den perfekten Sound für unvergessliche Nächte. Mit einem feinen Gespür für feinsten Hip-Hop und Urban Beats begleite ich Clubs, exklusive Events und private Feiern. Vom ersten Warm-up-Track bis zur allerletzten Zugabe sorge ich für die richtige Energie auf dem Dancefloor.",
   },
 
   // Mixtapes — replace href with real Mixcloud show URLs.
@@ -138,8 +173,9 @@ export const site = {
     hero: "/images/hero.jpg" as string | null, // Disco-Ball-Close-up
     heroCutout: "/images/hero-cutout.png" as string | null, // freigestellter Champion-Jacket-Shot (Higgsfield)
     portraitWide: null as string | null,
-    about: "/images/about.jpg" as string | null, // Club-Crowd
-    boombox: "/images/boombox.jpg" as string | null, // Regiestuhl-Pose
+    about: "/images/about.jpg" as string | null, // Club-Crowd (Stats-Hintergrund)
+    portrait: "/images/boombox.jpg" as string | null, // Studio-Regiestuhl-Pose (Über mich)
+    boombox: "/images/boombox-duo.png" as string | null, // Boombox-Society Duo-Pressefoto (Moogli & Soulrocca)
     epk: [
       "/images/press-1.jpg",
       "/images/press-2.jpg",
@@ -153,6 +189,7 @@ export type Site = typeof site;
 
 export const nav = [
   { href: "#sound", label: "Sound" },
+  { href: "#about", label: "Über mich" },
   { href: "#mixtapes", label: "Mixtapes" },
   { href: "#referenzen", label: "Referenzen" },
   { href: "#boombox", label: "Boombox-Society" },
