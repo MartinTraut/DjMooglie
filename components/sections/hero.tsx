@@ -2,31 +2,19 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useRef } from "react"
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { Play } from "lucide-react"
 import { Container } from "@/components/shared/container"
-import { BrushStroke } from "@/components/shared/brush"
 import { site } from "@/lib/site"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  })
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "10%"])
-  // Whole stage recedes slightly as the next section scrolls up over it.
-  const stageScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 0.95])
-  const stageOpacity = useTransform(scrollYProgress, [0, 0.85], [1, reduce ? 1 : 0.35])
 
   return (
     <section
       id="top"
-      ref={ref}
       className="relative overflow-hidden bg-white text-neutral-950"
     >
       {/* faint repeated wordmark echo behind everything */}
@@ -38,18 +26,16 @@ export function Hero() {
         <p className="truncate">MOOGLI MOOGLI MOOGLI</p>
       </div>
 
-      <Container className="relative pt-4 sm:pt-6">
+      <Container className="relative pt-24 sm:pt-28">
         {/* Stage: freed-up cutout of Mooglie in front, the big brush MOOGLI
             behind him. His head and torso occlude the centre letters, so the
-            word reads "MOO · him · GLI", crisp on the white block. Sized down so
-            the headline, bio and both CTAs sit inside the first viewport. */}
-        <div className="relative mx-auto flex min-h-[clamp(14rem,36svh,24rem)] max-w-5xl items-end justify-center">
+            word reads "MOO · him · GLI", crisp on the white block. */}
+        <div className="relative mx-auto flex min-h-[clamp(17rem,44svh,30rem)] max-w-5xl items-end justify-center">
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: EASE, delay: 0.06 }}
-            style={{ y: imgY, scale: stageScale, opacity: stageOpacity }}
-            className="relative w-[min(68vw,21rem)]"
+            className="relative w-[min(76vw,25rem)]"
           >
             {/* MOOGLI — wider than him, sitting behind, centred on his face so
                 his head and torso occlude the middle letters */}
@@ -60,7 +46,7 @@ export function Hero() {
               className="pointer-events-none absolute -left-[36%] top-[14%] z-0 w-[172%] text-center font-brush text-brand"
             >
               <span className="sr-only">{site.name}</span>
-              <span aria-hidden className="block text-[clamp(3.6rem,13.8vw,12rem)] leading-[0.78]">
+              <span aria-hidden className="block text-[clamp(4.2rem,15vw,13.5rem)] leading-[0.78]">
                 MOOGLI
               </span>
             </motion.h1>
@@ -74,12 +60,6 @@ export function Hero() {
               sizes="(max-width: 640px) 84vw, 29rem"
               className="relative z-10 h-auto w-full select-none object-contain bw drop-shadow-[0_24px_48px_rgba(0,0,0,0.22)]"
             />
-
-            {/* red paint slash over his torso */}
-            <BrushStroke
-              variant="slash"
-              className="pointer-events-none absolute -left-[18%] bottom-[20%] z-20 h-[26%] w-[136%] -rotate-6 text-brand drop-shadow-[0_8px_18px_rgba(0,0,0,0.18)]"
-            />
           </motion.div>
         </div>
 
@@ -88,7 +68,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.32 }}
-          className="relative z-10 -mt-1 pb-8 text-center sm:pb-10"
+          className="relative z-10 mt-4 pb-8 text-center sm:mt-6 sm:pb-12"
         >
           <div className="mb-3 flex justify-center sm:mb-4">
             <span className="inline-flex items-center gap-2.5 rounded-full border border-brand/40 bg-brand/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand sm:text-xs">
