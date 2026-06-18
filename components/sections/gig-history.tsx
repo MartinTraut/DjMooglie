@@ -46,7 +46,7 @@ export function GigHistory() {
             <div className="relative lg:sticky lg:top-28">
               <SectionLabel>Referenzen · Gig History</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05]">
+                <h2 className="mt-5 font-brush text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
                   Referen<span className="block text-brand">zen</span>
                 </h2>
               </Reveal>
@@ -93,7 +93,7 @@ export function GigHistory() {
                       <Star className="h-6 w-6 fill-brand" />
                     </span>
                     <div className="min-w-0">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-brand-foreground">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-foreground">
                         {resident.note}
                       </span>
                       <p className="mt-2 truncate font-display text-3xl uppercase leading-none tracking-tight sm:text-4xl">
@@ -163,7 +163,7 @@ export function GigHistory() {
               ))}
             </motion.ul>
 
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground/70">
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground/70">
               ★ Resident · Auswahl bestätigter Stationen
             </p>
           </div>

@@ -24,7 +24,7 @@ export function Management() {
                 </h2>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
+                <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
                   Bookings und Presseanfragen für DJ Mooglie laufen offiziell über
                   das Management von {m.company} in Frankfurt. Schnell, direkt und
                   verbindlich.
@@ -43,7 +43,7 @@ export function Management() {
               </Reveal>
             </div>
 
-            <Reveal delay={0.1} className="relative lg:col-span-5 lg:col-start-8">
+            <Reveal delay={0.1} className="relative lg:col-span-6 lg:col-start-7">
               <ul className="panel space-y-2 rounded-3xl p-8 sm:p-10">
                 <ContactRow icon={<MapPin className="h-5 w-5" />} label="Adresse" value={m.address} />
                 <ContactRow
@@ -95,7 +95,7 @@ function ContactRow({
         {icon}
       </span>
       <span>
-        <span className="block font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
           {label}
         </span>
         <span className="block text-base text-foreground">{value}</span>

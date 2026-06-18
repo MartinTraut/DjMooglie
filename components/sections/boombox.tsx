@@ -44,7 +44,7 @@ export function Boombox() {
                   className="aspect-[2/3] w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
               </motion.div>
-              <div className="absolute -right-3 -top-3 z-20 rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-brand sm:-right-5 sm:-top-5">
+              <div className="absolute -right-3 -top-3 z-20 rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-right-5 sm:-top-5">
                 B2B Duo
               </div>
             </div>
@@ -55,7 +55,7 @@ export function Boombox() {
             <div className="relative">
               <SectionLabel>Das Duo · B2B</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[1.05]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   Boombox-
                   <br />
                   <span className="text-brand">Society</span>

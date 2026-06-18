@@ -50,14 +50,14 @@ export function Booking() {
             <div className="relative">
               <SectionLabel>Kontakt & Booking</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(3rem,9vw,6.5rem)] leading-[1.05]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   Book
                   <br />
                   <span className="text-brand">Contact</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
+                <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
                   Club-Night, Festival, Firmenevent oder Private Party? Schick mir
                   die Eckdaten, du bekommst zeitnah eine Rückmeldung, direkt von
                   mir oder über mein Management.
@@ -74,7 +74,7 @@ export function Booking() {
                       <Mail className="h-4 w-4" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                      <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                         Direkt
                       </span>
                       <span className="text-sm text-foreground">{site.email}</span>
@@ -88,7 +88,7 @@ export function Booking() {
                       <Phone className="h-4 w-4" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                      <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                         Management · {site.management.company}
                       </span>
                       <span className="text-sm text-foreground">{site.management.phone}</span>
@@ -144,7 +144,7 @@ export function Booking() {
                   )}
                   {sent ? "Mail geöffnet" : "Anfrage senden"}
                 </button>
-                <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   Öffnet dein Mailprogramm · {site.email}
                 </p>
               </div>

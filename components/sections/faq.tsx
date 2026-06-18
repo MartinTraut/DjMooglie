@@ -58,14 +58,14 @@ export function FAQ() {
           <div className="lg:col-span-4">
             <SectionLabel>FAQ</SectionLabel>
             <Reveal>
-              <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5rem)] leading-[1.05]">
+              <h2 className="mt-5 font-brush text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
                 Häufige
                 <br />
                 <span className="text-brand">Fragen</span>
               </h2>
             </Reveal>
             <Reveal delay={0.08}>
-              <p className="mt-6 max-w-xs text-pretty leading-relaxed text-muted-foreground">
+              <p className="mt-6 max-w-sm text-pretty text-lg leading-relaxed text-muted-foreground">
                 Alles Wichtige zu Sound, Booking und {site.duo.name} auf einen Blick.
               </p>
             </Reveal>

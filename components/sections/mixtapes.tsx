@@ -37,7 +37,7 @@ export function Mixtapes() {
             <ChapterNumber n="2" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
             <SectionLabel>Mixtapes · Mixcloud</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[1.05]">
+              <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                 Music
               </h2>
             </Reveal>
@@ -53,7 +53,7 @@ export function Mixtapes() {
               href={site.socials.mixcloud}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-brand"
+              className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-brand"
             >
               <span className="relative">
                 Alle Mixe auf Mixcloud

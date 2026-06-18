@@ -34,7 +34,7 @@ export function About() {
             <div className="relative">
               <SectionLabel>{site.about.kicker}</SectionLabel>
               <Reveal>
-                <h2 className="mt-5 font-brush text-[clamp(2.75rem,7.5vw,5.5rem)] leading-[1.02]">
+                <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   {site.about.title}
                   <br />
                   <span className="text-brand">{site.about.titleAccent}</span>
@@ -50,7 +50,7 @@ export function About() {
                   {regions.map((r) => (
                     <li
                       key={r}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-1.5 font-display text-sm uppercase tracking-tight transition-colors hover:border-brand"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2 font-display text-base uppercase tracking-tight transition-colors hover:border-brand sm:text-lg"
                     >
                       <MapPin className="h-3.5 w-3.5 text-brand" />
                       {r}
@@ -80,7 +80,7 @@ export function About() {
                   className="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
               </motion.div>
-              <div className="absolute -left-3 -top-3 z-20 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-brand sm:-left-5 sm:-top-5">
+              <div className="absolute -left-3 -top-3 z-20 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
                 DJ Mooglie
               </div>
             </div>

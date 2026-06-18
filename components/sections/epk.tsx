@@ -42,7 +42,7 @@ export function EPK() {
             <ChapterNumber n="5" className="-top-16 right-0 translate-x-1/3" />
             <SectionLabel>Electronic Press Kit</SectionLabel>
             <Reveal>
-              <h2 className="relative mt-5 font-brush text-[clamp(3rem,9vw,7rem)] leading-[1.05]">
+              <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                 Press <span className="text-brand">Kit</span>
               </h2>
             </Reveal>
@@ -101,7 +101,7 @@ export function EPK() {
                   }}
                   className="group relative flex flex-col items-center gap-2 overflow-hidden p-6 text-center transition-colors duration-300 hover:bg-secondary/50 sm:p-7"
                 >
-                  <dt className="font-mono text-xs uppercase tracking-[0.22em] text-brand transition-transform duration-300 group-hover:-translate-y-0.5">
+                  <dt className="font-mono text-xs uppercase tracking-[0.16em] text-brand transition-transform duration-300 group-hover:-translate-y-0.5">
                     {f.k}
                   </dt>
                   <dd className="text-xl font-semibold leading-snug text-foreground transition-transform duration-300 group-hover:scale-[1.03] sm:text-2xl">

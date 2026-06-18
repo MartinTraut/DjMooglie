@@ -65,7 +65,7 @@ export function Sound() {
               <SectionLabel>Welcher Sound</SectionLabel>
               <motion.div style={{ y: headY }} className="will-change-transform">
                 <Reveal>
-                  <h2 className="mt-5 font-brush text-[clamp(2.75rem,7vw,5rem)] leading-[1.02] [hyphens:none]">
+                  <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05] [hyphens:none]">
                     Ein Sound,
                     <br />
                     der <span className="text-brand">verbindet</span>
@@ -96,7 +96,7 @@ export function Sound() {
                     </span>
                     <div>
                       <h3 className="font-display text-2xl uppercase tracking-tight">{p.t}</h3>
-                      <p className="mt-2 text-pretty text-[15px] leading-relaxed text-muted-foreground">
+                      <p className="mt-2 text-pretty text-base leading-relaxed text-muted-foreground">
                         {p.d}
                       </p>
                     </div>
