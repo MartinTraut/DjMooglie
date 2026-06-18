@@ -53,7 +53,7 @@ export function Stats() {
               variant="underline"
               className="absolute -bottom-4 left-0 h-6 w-56 text-brand"
             />
-            <p className="text-balance font-brush text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.12]">
+            <p className="text-balance font-brush text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.32] [hyphens:none]">
               „Wenn der Raum kippt und alle Hände hochgehen, dafür mache{" "}
               <span className="text-brand">ich</span> das.“
             </p>

@@ -75,11 +75,11 @@ export function Mixtapes() {
                 transition={{ duration: 0.25, ease: EASE }}
                 className="group panel panel-hover elevate relative flex h-full flex-col justify-between gap-10 rounded-2xl p-7"
               >
-                <div className="flex items-start justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-brand">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-sm font-semibold uppercase tracking-[0.18em] text-brand sm:text-base">
                     {m.tag}
                   </span>
-                  <span className="font-brush text-3xl leading-none text-white/15 transition-colors duration-300 group-hover:text-white/30">
+                  <span className="font-brush text-4xl leading-none text-white/15 transition-colors duration-300 group-hover:text-white/30 sm:text-5xl">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
