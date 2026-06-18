@@ -63,7 +63,7 @@ export function About() {
 
           {/* Portrait */}
           <Reveal className="order-1 lg:order-2 lg:col-span-5">
-            <div ref={ref} className="relative mx-auto w-full max-w-[22rem] sm:max-w-[24rem]">
+            <div ref={ref} className="relative mx-auto w-full max-w-[24rem] sm:max-w-[28rem] lg:max-w-[34rem]">
               <BrushStroke
                 variant="smear"
                 className="pointer-events-none absolute -right-6 -top-6 z-0 h-40 w-2/3 text-brand/80"

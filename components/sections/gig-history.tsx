@@ -162,10 +162,6 @@ export function GigHistory() {
                 </motion.li>
               ))}
             </motion.ul>
-
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground/70">
-              ★ Resident · Auswahl bestätigter Stationen
-            </p>
           </div>
         </div>
       </Container>
