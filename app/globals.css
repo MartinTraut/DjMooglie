@@ -244,6 +244,19 @@
         }
     }
 
+    /* Soft attention pulse on the player before the visitor opts into sound. */
+    @keyframes vinyl-pulse {
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.55;
+        }
+        50% {
+            transform: scale(1.12);
+            opacity: 0;
+        }
+    }
+
     /* High-end soft elevation — a faint inner top-light plus a deep, very soft
        drop. Gives cards real depth without a hard box edge. */
     .elevate {

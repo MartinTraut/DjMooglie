@@ -3,6 +3,7 @@ import { Footer } from "@/components/site/footer"
 import { VinylPlayer } from "@/components/site/vinyl-player"
 import { Hero } from "@/components/sections/hero"
 import { Ticker } from "@/components/sections/ticker"
+import { NextEvent } from "@/components/sections/next-event"
 import { Sound } from "@/components/sections/sound"
 import { About } from "@/components/sections/about"
 import { Stats } from "@/components/sections/stats"
@@ -12,6 +13,7 @@ import { Boombox } from "@/components/sections/boombox"
 import { EPK } from "@/components/sections/epk"
 import { Management } from "@/components/sections/management"
 import { Booking } from "@/components/sections/booking"
+import { Reviews } from "@/components/sections/reviews"
 import { FAQ } from "@/components/sections/faq"
 
 export default function Page() {
@@ -26,6 +28,7 @@ export default function Page() {
           <Hero />
           <Ticker />
         </div>
+        <NextEvent />
         <Sound />
         <About />
         <Stats />
@@ -34,6 +37,7 @@ export default function Page() {
         <Boombox />
         <EPK />
         <Management />
+        <Reviews />
         <Booking />
         <FAQ />
       </main>

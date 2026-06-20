@@ -13,7 +13,7 @@ import { site } from "@/lib/site"
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const facts = [
-  { k: "Künstlername", v: "DJ Mooglie" },
+  { k: "Künstlername", v: "DJ Moogli" },
   { k: "Herkunft", v: "Raum Heilbronn" },
   { k: "Resident", v: "Cooky's Club, Frankfurt" },
   { k: "Genres", v: "Hip-Hop · R'n'B · Afro · Baile Funk · Latin" },
@@ -67,7 +67,7 @@ export function EPK() {
                 >
                   <Media
                     src={src}
-                    alt={`Pressefoto DJ Mooglie ${i + 1}`}
+                    alt={`Pressefoto DJ Moogli ${i + 1}`}
                     label={`Pressefoto ${i + 1}`}
                     sizes="(max-width: 1024px) 45vw, 30vw"
                     className="aspect-[2/3] transition-transform duration-500 ease-out group-hover:scale-[1.05]"

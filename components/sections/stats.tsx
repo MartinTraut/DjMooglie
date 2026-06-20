@@ -48,14 +48,14 @@ export function Stats() {
 
       <Container className="py-24 sm:py-32">
         <Reveal>
-          <div className="relative max-w-3xl">
+          <div className="relative max-w-3xl sm:ml-12 lg:ml-24">
             <BrushStroke
               variant="underline"
               className="absolute -bottom-4 left-0 h-6 w-56 text-brand"
             />
             <p className="text-balance font-brush text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.32] [hyphens:none]">
-              „Wenn der Raum kippt und alle Hände hochgehen, dafür mache{" "}
-              <span className="text-brand">ich</span> das.“
+              <span className="mr-[0.16em]">„</span>Wenn der Raum kippt und alle Hände hochgehen, dafür mache{" "}
+              <span className="text-brand">ich</span> das.<span className="ml-[0.1em]">“</span>
             </p>
           </div>
         </Reveal>

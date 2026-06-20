@@ -75,13 +75,13 @@ export function About() {
                 <Media
                   src={site.assets.portrait}
                   alt={`${site.name} · Studioportrait`}
-                  label="DJ Mooglie"
+                  label="DJ Moogli"
                   sizes="(max-width: 1024px) 80vw, 24rem"
                   className="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
               </motion.div>
               <div className="absolute -left-3 -top-3 z-20 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
-                DJ Mooglie
+                DJ Moogli
               </div>
             </div>
           </Reveal>

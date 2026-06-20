@@ -7,7 +7,7 @@
  */
 
 export const site = {
-  name: "DJ Mooglie",
+  name: "DJ Moogli",
   brand: "MOOGLI", // wordmark spelling (logo + management)
   role: "Urban & Hip-Hop DJ",
   baseUrl: "https://djmoogli.de", // TODO: confirm final domain
@@ -17,7 +17,7 @@ export const site = {
 
   tagline: "Hip-Hop. R'n'B. Afro. Baile Funk. Latin.",
   shortBio:
-    "Ich bin Mooglie, Urban-DJ aus dem Raum Heilbronn und Resident im Frankfurter Cooky's Club. Ich lese den Floor und lege Hip-Hop, R'n'B, Afro, Baile Funk und Latin so übereinander, dass die Energie über die ganze Nacht trägt.",
+    "Ich bin Moogli, Urban-DJ aus dem Raum Heilbronn und Resident im Frankfurter Cooky's Club. Ich lese den Floor und lege Hip-Hop, R'n'B, Afro, Baile Funk und Latin so übereinander, dass die Energie über die ganze Nacht trägt.",
 
   // GEO / Local-SEO: Standort und Einzugsgebiet als echte Daten fürs Schema.
   geo: {
@@ -188,10 +188,11 @@ export const site = {
 export type Site = typeof site;
 
 export const nav = [
+  { href: "#event", label: "Live" },
   { href: "#sound", label: "Sound" },
   { href: "#about", label: "Über mich" },
   { href: "#mixtapes", label: "Mixtapes" },
-  { href: "#referenzen", label: "Referenzen" },
+  { href: "#rezensionen", label: "Rezensionen" },
   { href: "#boombox", label: "Boombox-Society" },
   { href: "#epk", label: "EPK" },
 ] as const;

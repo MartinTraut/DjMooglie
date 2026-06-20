@@ -39,7 +39,7 @@ export function Hero() {
       </div>
 
       <Container className="relative pt-24 sm:pt-32">
-        {/* Stage: freed-up cutout of Mooglie in front, the big brush MOOGLI
+        {/* Stage: freed-up cutout of Moogli in front, the big brush MOOGLI
             behind him. His head and torso occlude the centre letters, so the
             word reads "MOO · him · GLI", crisp on the white block. */}
         <div className="relative mx-auto flex min-h-[clamp(14rem,38svh,30rem)] max-w-6xl items-end justify-center">
@@ -66,7 +66,7 @@ export function Hero() {
 
             <Image
               src={site.assets.heroCutout ?? "/images/hero-cutout.png"}
-              alt="DJ Mooglie"
+              alt="DJ Moogli"
               width={1100}
               height={1466}
               priority
@@ -107,7 +107,7 @@ export function Hero() {
               Booking anfragen
             </Link>
             <Link
-              href="#referenzen"
+              href="#rezensionen"
               className="group inline-flex items-center gap-2.5 rounded-full border border-neutral-300 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-neutral-950 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               <Star className="h-3.5 w-3.5 fill-brand text-brand transition-transform group-hover:scale-110" />

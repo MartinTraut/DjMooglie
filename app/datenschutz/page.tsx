@@ -18,7 +18,7 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich im Sinne der DSGVO ist:
           <br />
-          <Todo>TODO: Name</Todo> (DJ Mooglie), <Todo>TODO: Anschrift</Todo>
+          <Todo>TODO: Name</Todo> (DJ Moogli), <Todo>TODO: Anschrift</Todo>
           <br />
           E-Mail:{" "}
           <a href={`mailto:${site.email}`} className="text-brand">
@@ -68,22 +68,61 @@ export default function DatenschutzPage() {
       <LegalBlock heading="5. Cookies & Tracking">
         <p>
           Diese Website setzt <strong>keine</strong> Tracking- oder
-          Marketing-Cookies und nutzt kein Analyse-Tool. Es werden ausschließlich
-          technisch notwendige Daten verarbeitet.{" "}
+          Marketing-Cookies und nutzt kein Analyse-Tool. Ohne deine Interaktion
+          werden ausschließlich technisch notwendige Daten verarbeitet. Cookies
+          bzw. vergleichbare Technologien können erst entstehen, wenn du den
+          Musik-Player aktiv startest (siehe Ziffer 6).{" "}
           <Todo>TODO: anpassen, falls Analytics/Pixel ergänzt wird</Todo>
         </p>
       </LegalBlock>
 
-      <LegalBlock heading="6. Eingebundene Dienste Dritter">
+      <LegalBlock heading="6. Musik-Player (Mixcloud)">
         <p>
-          Über Links und Buttons kann auf externe Plattformen verwiesen werden
-          (z. B. Instagram, Mixcloud, KOMA Music). Beim Anklicken gelten die
-          Datenschutzbestimmungen der jeweiligen Anbieter. Es werden keine
-          Inhalte dieser Dienste ohne deine Interaktion nachgeladen.
+          Auf dieser Seite kannst du über einen Player einen Mix anhören. Die
+          Audio-Wiedergabe erfolgt technisch über ein eingebettetes Widget von{" "}
+          <strong>Mixcloud</strong> (Mixcloud Limited, London, Vereinigtes
+          Königreich). Dieses Widget wird{" "}
+          <strong>erst nach deiner ausdrücklichen Einwilligung</strong> geladen:
+          Solange du den Player nicht aktiv startest, wird keinerlei Verbindung zu
+          Mixcloud aufgebaut und es werden keine Daten an Mixcloud übertragen.
+        </p>
+        <p>
+          Tippst du auf den Player, werden ein Skript und ein iFrame von Mixcloud
+          nachgeladen. Dabei verarbeitet Mixcloud technisch notwendige Daten (u. a.
+          deine IP-Adresse) und kann Cookies bzw. vergleichbare Technologien auf
+          deinem Gerät speichern. Dabei kann es zu einer Übermittlung von Daten in
+          Drittländer kommen. Rechtsgrundlage ist deine Einwilligung nach{" "}
+          <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> i. V. m. § 25 Abs. 1 TTDSG.
+        </p>
+        <p>
+          Deine Entscheidung wird lokal in deinem Browser gespeichert
+          (<em>localStorage</em>), damit du nicht bei jedem Besuch erneut gefragt
+          wirst. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft
+          widerrufen, indem du die Website-Daten dieser Seite in deinem Browser
+          löschst. Einzelheiten zur Datenverarbeitung durch Mixcloud findest du
+          unter{" "}
+          <a
+            href="https://www.mixcloud.com/privacy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand"
+          >
+            mixcloud.com/privacy
+          </a>
+          .
         </p>
       </LegalBlock>
 
-      <LegalBlock heading="7. Deine Rechte">
+      <LegalBlock heading="7. Eingebundene Dienste Dritter">
+        <p>
+          Über Links und Buttons kann auf externe Plattformen verwiesen werden
+          (z. B. Instagram, Mixcloud, KOMA Music). Beim Anklicken gelten die
+          Datenschutzbestimmungen der jeweiligen Anbieter. Darüber hinaus werden
+          keine Inhalte dieser Dienste ohne deine Interaktion nachgeladen.
+        </p>
+      </LegalBlock>
+
+      <LegalBlock heading="8. Deine Rechte">
         <p>
           Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16),
           Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18),

@@ -25,7 +25,7 @@ export function Management() {
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                  Bookings und Presseanfragen für DJ Mooglie laufen offiziell über
+                  Bookings und Presseanfragen für DJ Moogli laufen offiziell über
                   das Management von {m.company} in Frankfurt. Schnell, direkt und
                   verbindlich.
                 </p>

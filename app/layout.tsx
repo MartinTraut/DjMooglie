@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "DJ Mooglie, Urban & Hip-Hop DJ aus dem Raum Heilbronn und Resident im Cooky's Club Frankfurt. Hip-Hop, R'n'B, Afro, Baile Funk und Latin für Clubs, Events und private Feiern. Mixtapes, EPK und Booking-Anfrage.",
+    "DJ Moogli, Urban & Hip-Hop DJ aus dem Raum Heilbronn und Resident im Cooky's Club Frankfurt. Hip-Hop, R'n'B, Afro, Baile Funk und Latin für Clubs, Events und private Feiern. Mixtapes, EPK und Booking-Anfrage.",
   keywords: [
-    "DJ Mooglie",
     "DJ Moogli",
+    "DJ Mooglie",
     "Hip-Hop DJ",
     "Urban DJ",
     "DJ Frankfurt",
@@ -84,7 +84,7 @@ const jsonLd = {
       "@type": ["Person", "MusicGroup"],
       "@id": `${site.baseUrl}/#person`,
       name: site.name,
-      alternateName: ["DJ Moogli", "Moogli"],
+      alternateName: ["Moogli", "DJ Mooglie", "Mooglie"],
       jobTitle: "DJ",
       description: site.shortBio,
       genre: [...site.genres],

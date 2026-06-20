@@ -38,7 +38,7 @@ export function Boombox() {
               >
                 <Media
                   src={site.assets.boombox}
-                  alt={`${site.duo.name}: DJ Mooglie & ${site.duo.partner}, back to back`}
+                  alt={`${site.duo.name}: DJ Moogli & ${site.duo.partner}, back to back`}
                   label="Boombox-Society"
                   sizes="(max-width: 1024px) 80vw, 24rem"
                   className="aspect-[2/3] w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
@@ -126,7 +126,7 @@ export function Boombox() {
                     rel="noopener noreferrer"
                     className="rounded-full border border-border bg-card px-7 py-3.5 font-display text-lg uppercase tracking-tight transition-colors hover:border-brand hover:text-brand sm:text-xl"
                   >
-                    DJ Mooglie
+                    DJ Moogli
                   </a>
                   <span className="font-brush text-4xl text-brand">×</span>
                   <a

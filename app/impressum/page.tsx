@@ -16,7 +16,7 @@ export default function ImpressumPage() {
     >
       <LegalBlock heading="Diensteanbieter">
         <p>
-          <Todo>TODO: Vor- und Nachname</Todo> (DJ Mooglie)
+          <Todo>TODO: Vor- und Nachname</Todo> (DJ Moogli)
           <br />
           <Todo>TODO: Straße &amp; Hausnr.</Todo>
           <br />
@@ -90,7 +90,7 @@ export default function ImpressumPage() {
 
       <LegalBlock heading="Bildnachweise">
         <p>
-          Fotos: <Todo>TODO: Fotograf:in / Credit nennen</Todo>. Logo: DJ Mooglie.
+          Fotos: <Todo>TODO: Fotograf:in / Credit nennen</Todo>. Logo: DJ Moogli.
         </p>
       </LegalBlock>
 

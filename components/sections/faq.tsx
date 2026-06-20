@@ -11,15 +11,15 @@ import { cn } from "@/lib/utils"
 
 const faqs = [
   {
-    q: "Welche Musik legt DJ Mooglie auf?",
+    q: "Welche Musik legt DJ Moogli auf?",
     a: "Ich spiele Urban Music mit Schwerpunkt Hip-Hop und R'n'B, dazu Afro, Baile Funk und Latin. Mein Ding ist das Genre-Crossing: Ich führe diese Stile zu einem Groove zusammen, der den Floor die ganze Nacht in Bewegung hält.",
   },
   {
-    q: "Wo kann ich DJ Mooglie live erleben?",
+    q: "Wo kann ich DJ Moogli live erleben?",
     a: "Live spiele ich regelmäßig als Resident im Cooky's Club in Frankfurt am Main, dazu auf Clubnächten, Festivals und privaten Events. Aktuelle Termine und Mixe findest du auf meinem Instagram (@djmoogli) und auf Mixcloud.",
   },
   {
-    q: "Wie kann ich DJ Mooglie für mein Event buchen?",
+    q: "Wie kann ich DJ Moogli für mein Event buchen?",
     a: "Am schnellsten über das Booking-Formular auf dieser Seite oder direkt per E-Mail an info@djmoogli.de. Offizielle Buchungen und Presseanfragen laufen außerdem über mein Management KOMA Music in Frankfurt (Tel. +49 69 677 38 346).",
   },
   {
@@ -27,11 +27,11 @@ const faqs = [
     a: "Boombox-Society ist mein DJ-Duo mit DJ Soulrocca. Wir legen back-to-back auf: zwei Handschriften, doppelte Energie und ein durchgehender Flow, ideal für Clubnächte und größere Events.",
   },
   {
-    q: "Für welche Art von Events ist DJ Mooglie buchbar?",
+    q: "Für welche Art von Events ist DJ Moogli buchbar?",
     a: "Ich spiele von Clubnächten und Festivals über Firmenfeiern bis zu privaten Partys und Hochzeiten. Durch mein breites Genre-Spektrum passe ich das Set flexibel an Publikum und Anlass an, vom dezenten Warm-up bis zum Peak-Time-Set.",
   },
   {
-    q: "In welcher Region ist DJ Mooglie unterwegs?",
+    q: "In welcher Region ist DJ Moogli unterwegs?",
     a: "Ich komme aus dem Raum Heilbronn und bin Resident in Frankfurt. Gebucht werde ich bundesweit; Anfragen für andere Regionen und das Ausland gehen jederzeit über mein Management.",
   },
 ]
