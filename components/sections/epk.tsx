@@ -21,7 +21,11 @@ const facts = [
   { k: "Management", v: "KOMA Music, Frankfurt" },
 ]
 
-export function EPK() {
+export function EPK({
+  images = site.assets.epk,
+}: {
+  images?: (string | null)[]
+}) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -59,7 +63,7 @@ export function EPK() {
           {/* Press photos */}
           <Reveal className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-4">
-              {site.assets.epk.map((src, i) => (
+              {images.map((src, i) => (
                 <motion.div
                   key={i}
                   style={reduce ? undefined : { y: i % 2 === 0 ? yA : yB }}

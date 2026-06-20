@@ -17,6 +17,7 @@ import { Reviews } from "@/components/sections/reviews"
 import { FAQ } from "@/components/sections/faq"
 import {
   getSiteText,
+  getSiteImages,
   getSoundPillars,
   getStats,
   getMixtapes,
@@ -24,10 +25,11 @@ import {
 } from "@/sanity/queries"
 
 export default async function Page() {
-  // Editable copy comes from Sanity (with local fallback). Fetched once,
-  // server-side, then handed to the (client) sections as props.
-  const [text, pillars, stats, mixtapes, faqs] = await Promise.all([
+  // Editable copy + images come from Sanity (with local fallback). Fetched
+  // once, server-side, then handed to the (client) sections as props.
+  const [text, images, pillars, stats, mixtapes, faqs] = await Promise.all([
     getSiteText(),
+    getSiteImages(),
     getSoundPillars(),
     getStats(),
     getMixtapes(),
@@ -42,7 +44,7 @@ export default async function Page() {
             always lands on the bottom edge and the genre marquee below it only
             appears on scroll — independent of the visitor's screen height. */}
         <div className="flex min-h-svh flex-col">
-          <Hero bio={text.heroBio} />
+          <Hero bio={text.heroBio} image={images.hero} />
           <Ticker />
         </div>
         <NextEvent />
@@ -52,12 +54,13 @@ export default async function Page() {
           titleAccent={text.aboutTitleAccent}
           body={text.aboutBody}
           regions={text.regions}
+          image={images.about}
         />
-        <Stats quote={text.statsQuote} stats={stats} />
+        <Stats quote={text.statsQuote} stats={stats} image={images.stats} />
         <Mixtapes items={mixtapes} />
         <GigHistory />
-        <Boombox />
-        <EPK />
+        <Boombox image={images.boombox} />
+        <EPK images={images.epk} />
         <Management />
         <Reviews />
         <Booking />

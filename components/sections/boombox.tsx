@@ -10,7 +10,11 @@ import { Reveal } from "@/components/shared/reveal"
 import { BrushStroke, ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
 
-export function Boombox() {
+export function Boombox({
+  image = site.assets.boombox,
+}: {
+  image?: string | null
+}) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -37,7 +41,7 @@ export function Boombox() {
                 className="group elevate relative z-10 overflow-hidden rounded-2xl border border-border"
               >
                 <Media
-                  src={site.assets.boombox}
+                  src={image}
                   alt={`${site.duo.name}: DJ Moogli & ${site.duo.partner}, back to back`}
                   label="Boombox-Society"
                   sizes="(max-width: 1024px) 80vw, 24rem"

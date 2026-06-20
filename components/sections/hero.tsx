@@ -12,7 +12,13 @@ import { siteText } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-export function Hero({ bio = siteText.heroBio }: { bio?: string }) {
+export function Hero({
+  bio = siteText.heroBio,
+  image = site.assets.heroCutout,
+}: {
+  bio?: string
+  image?: string | null
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({
@@ -66,7 +72,7 @@ export function Hero({ bio = siteText.heroBio }: { bio?: string }) {
             </motion.h1>
 
             <Image
-              src={site.assets.heroCutout ?? "/images/hero-cutout.png"}
+              src={image ?? "/images/hero-cutout.png"}
               alt="DJ Moogli"
               width={1100}
               height={1466}

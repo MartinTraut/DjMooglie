@@ -10,6 +10,7 @@ export const siteSettings = defineType({
     { name: "about", title: "Über mich" },
     { name: "sound", title: "Sound" },
     { name: "stats", title: "Zitat" },
+    { name: "bilder", title: "Bilder" },
   ],
   fields: [
     defineField({
@@ -60,6 +61,43 @@ export const siteSettings = defineType({
       type: "text",
       rows: 3,
       group: "stats",
+    }),
+    defineField({
+      name: "heroImage",
+      title: "Hero-Foto (freigestellt, am besten PNG)",
+      type: "image",
+      options: { hotspot: true },
+      group: "bilder",
+    }),
+    defineField({
+      name: "aboutImage",
+      title: "Über-mich-Porträt",
+      type: "image",
+      options: { hotspot: true },
+      group: "bilder",
+    }),
+    defineField({
+      name: "statsImage",
+      title: "Hintergrund-Foto (Crowd / Club)",
+      type: "image",
+      options: { hotspot: true },
+      group: "bilder",
+    }),
+    defineField({
+      name: "boomboxImage",
+      title: "Boombox-Duo-Foto",
+      type: "image",
+      options: { hotspot: true },
+      group: "bilder",
+    }),
+    defineField({
+      name: "epkImages",
+      title: "EPK-Pressefotos",
+      type: "array",
+      of: [{ type: "image", options: { hotspot: true } }],
+      group: "bilder",
+      description: "Bis zu 4 Fotos. Reihenfolge = Anzeige.",
+      validation: (r) => r.max(4),
     }),
   ],
   preview: {

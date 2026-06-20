@@ -14,9 +14,11 @@ const EASE = [0.22, 1, 0.36, 1] as const
 export function Stats({
   quote = siteText.statsQuote,
   stats = statItems,
+  image = site.assets.about,
 }: {
   quote?: string
   stats?: StatItem[]
+  image?: string | null
 }) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
@@ -34,7 +36,7 @@ export function Stats({
     >
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10 brightness-[1.18] will-change-transform">
         <Media
-          src={site.assets.about}
+          src={image}
           alt="Volle Crowd im Club, Hände in der Luft"
           label="Club / Crowd"
           sizes="100vw"

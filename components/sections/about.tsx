@@ -16,11 +16,13 @@ export function About({
   titleAccent = siteText.aboutTitleAccent,
   body = siteText.aboutBody,
   regions = siteText.regions,
+  image = site.assets.portrait,
 }: {
   title?: string
   titleAccent?: string
   body?: string
   regions?: string[]
+  image?: string | null
 }) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
@@ -82,7 +84,7 @@ export function About({
                 className="group elevate relative z-10 overflow-hidden rounded-2xl border border-border bg-white"
               >
                 <Media
-                  src={site.assets.portrait}
+                  src={image}
                   alt={`${site.name} · Studioportrait`}
                   label="DJ Moogli"
                   sizes="(max-width: 1024px) 80vw, 24rem"

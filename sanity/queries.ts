@@ -18,6 +18,14 @@ import {
 
 export type Mixtape = { title: string; desc: string; tag: string; href: string }
 
+export type SiteImages = {
+  hero: string | null
+  about: string | null
+  stats: string | null
+  boombox: string | null
+  epk: (string | null)[]
+}
+
 const fetchOpts = { next: { revalidate: 60 } } as const
 
 /* Each helper falls back to local content (lib/content.ts / site.ts) when
@@ -84,6 +92,39 @@ export async function getSiteText(): Promise<SiteText> {
     /* fall back */
   }
   return fallbackText
+}
+
+const IMAGES_QUERY = groq`*[_id == "siteSettings"][0]{
+  "hero": heroImage.asset->url,
+  "about": aboutImage.asset->url,
+  "stats": statsImage.asset->url,
+  "boombox": boomboxImage.asset->url,
+  "epk": epkImages[].asset->url
+}`
+
+export async function getSiteImages(): Promise<SiteImages> {
+  const fallback: SiteImages = {
+    hero: site.assets.heroCutout,
+    about: site.assets.portrait,
+    stats: site.assets.about,
+    boombox: site.assets.boombox,
+    epk: site.assets.epk,
+  }
+  try {
+    const d = await client.fetch<Partial<SiteImages> | null>(IMAGES_QUERY, {}, fetchOpts)
+    if (d) {
+      return {
+        hero: d.hero ?? fallback.hero,
+        about: d.about ?? fallback.about,
+        stats: d.stats ?? fallback.stats,
+        boombox: d.boombox ?? fallback.boombox,
+        epk: d.epk && d.epk.length > 0 ? d.epk : fallback.epk,
+      }
+    }
+  } catch {
+    /* fall back */
+  }
+  return fallback
 }
 
 const PILLARS_QUERY = groq`*[_type == "soundPillar"] | order(coalesce(order, 999) asc, _createdAt asc){
