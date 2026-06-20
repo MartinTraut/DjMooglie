@@ -8,10 +8,11 @@ import { Star } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { BrushStroke } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-export function Hero() {
+export function Hero({ bio = siteText.heroBio }: { bio?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({
@@ -96,7 +97,7 @@ export function Hero() {
             <span className="text-neutral-950">DJ</span>
           </p>
           <p className="mx-auto mt-3 max-w-xl text-pretty text-sm leading-relaxed text-neutral-600 sm:text-base">
-            {site.shortBio}
+            {bio}
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">

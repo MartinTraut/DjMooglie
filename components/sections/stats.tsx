@@ -7,17 +7,17 @@ import { Container } from "@/components/shared/container"
 import { Reveal } from "@/components/shared/reveal"
 import { BrushStroke } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText, statItems, type StatItem } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const stats = [
-  { value: "5+", label: "Genres im Set" },
-  { value: "Resident", label: "Cooky's Club FFM" },
-  { value: "2", label: "DJs als Boombox-Society" },
-  { value: "100%", label: "Floor-Energie" },
-]
-
-export function Stats() {
+export function Stats({
+  quote = siteText.statsQuote,
+  stats = statItems,
+}: {
+  quote?: string
+  stats?: StatItem[]
+}) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -54,8 +54,7 @@ export function Stats() {
               className="absolute -bottom-4 left-0 h-6 w-56 text-brand"
             />
             <p className="text-balance font-brush text-[clamp(2rem,5.5vw,3.75rem)] leading-[1.32] [hyphens:none]">
-              <span className="mr-[0.16em]">„</span>Wenn der Raum kippt und alle Hände hochgehen, dafür mache{" "}
-              <span className="text-brand">ich</span> das.<span className="ml-[0.1em]">“</span>
+              <span className="mr-[0.16em]">„</span>{quote}<span className="ml-[0.1em]">“</span>
             </p>
           </div>
         </Reveal>

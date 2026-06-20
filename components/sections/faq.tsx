@@ -7,36 +7,10 @@ import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { site } from "@/lib/site"
+import { faqItems, type FaqItem } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
-const faqs = [
-  {
-    q: "Welche Musik legt DJ Moogli auf?",
-    a: "Ich spiele Urban Music mit Schwerpunkt Hip-Hop und R'n'B, dazu Afro, Baile Funk und Latin. Mein Ding ist das Genre-Crossing: Ich führe diese Stile zu einem Groove zusammen, der den Floor die ganze Nacht in Bewegung hält.",
-  },
-  {
-    q: "Wo kann ich DJ Moogli live erleben?",
-    a: "Live spiele ich regelmäßig als Resident im Cooky's Club in Frankfurt am Main, dazu auf Clubnächten, Festivals und privaten Events. Aktuelle Termine und Mixe findest du auf meinem Instagram (@djmoogli) und auf Mixcloud.",
-  },
-  {
-    q: "Wie kann ich DJ Moogli für mein Event buchen?",
-    a: "Am schnellsten über das Booking-Formular auf dieser Seite oder direkt per E-Mail an info@djmoogli.de. Offizielle Buchungen und Presseanfragen laufen außerdem über mein Management KOMA Music in Frankfurt (Tel. +49 69 677 38 346).",
-  },
-  {
-    q: "Was ist die Boombox-Society?",
-    a: "Boombox-Society ist mein DJ-Duo mit DJ Soulrocca. Wir legen back-to-back auf: zwei Handschriften, doppelte Energie und ein durchgehender Flow, ideal für Clubnächte und größere Events.",
-  },
-  {
-    q: "Für welche Art von Events ist DJ Moogli buchbar?",
-    a: "Ich spiele von Clubnächten und Festivals über Firmenfeiern bis zu privaten Partys und Hochzeiten. Durch mein breites Genre-Spektrum passe ich das Set flexibel an Publikum und Anlass an, vom dezenten Warm-up bis zum Peak-Time-Set.",
-  },
-  {
-    q: "In welcher Region ist DJ Moogli unterwegs?",
-    a: "Ich komme aus dem Raum Heilbronn und bin Resident in Frankfurt. Gebucht werde ich bundesweit; Anfragen für andere Regionen und das Ausland gehen jederzeit über mein Management.",
-  },
-]
-
-export function FAQ() {
+export function FAQ({ items = faqItems }: { items?: FaqItem[] }) {
   const [open, setOpen] = React.useState<number | null>(0)
   const reduce = useReducedMotion()
 
@@ -44,10 +18,10 @@ export function FAQ() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     inLanguage: "de-DE",
-    mainEntity: faqs.map((f) => ({
+    mainEntity: items.map((f) => ({
       "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
   }
 
@@ -73,7 +47,7 @@ export function FAQ() {
 
           <div className="lg:col-span-8">
             <ul className="flex flex-col gap-3">
-              {faqs.map((f, i) => {
+              {items.map((f, i) => {
                 const isOpen = open === i
                 return (
                   <li
@@ -95,7 +69,7 @@ export function FAQ() {
                           isOpen ? "text-brand" : "text-foreground group-hover:text-brand"
                         )}
                       >
-                        {f.q}
+                        {f.question}
                       </span>
                       <Plus
                         className={cn(
@@ -114,7 +88,7 @@ export function FAQ() {
                           className="overflow-hidden"
                         >
                           <p className="max-w-2xl pb-6 text-pretty leading-relaxed text-muted-foreground">
-                            {f.a}
+                            {f.answer}
                           </p>
                         </motion.div>
                       )}

@@ -8,28 +8,17 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText, soundPillars, type SoundPillar } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const pillars = [
-  {
-    k: "01",
-    t: "Crowd-Reading",
-    d: "Kein Set von der Stange. Ich lese den Floor in Echtzeit und dreh den Vibe genau dann, wenn der Raum danach verlangt.",
-  },
-  {
-    k: "02",
-    t: "Genre-Crossing",
-    d: "Hip-Hop trifft Afro, R'n'B kippt in Baile Funk, Latin hält die Hüften in Bewegung. Ich mixe das übergangslos und mit Gefühl.",
-  },
-  {
-    k: "03",
-    t: "Club-Sound",
-    d: "Geschult als Resident im Cooky's Club Frankfurt. Ich bringe Energie, Timing und ein Gespür für den perfekten Drop mit.",
-  },
-]
-
-export function Sound() {
+export function Sound({
+  intro = siteText.soundIntro,
+  pillars = soundPillars,
+}: {
+  intro?: string
+  pillars?: SoundPillar[]
+}) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -74,9 +63,7 @@ export function Sound() {
               </motion.div>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                  {site.tagline} Meine Handschrift ist die Verbindung. Ich baue aus
-                  Sounds verschiedener Welten einen Groove, der niemanden stehen
-                  lässt, von der ersten bis zur letzten Stunde.
+                  {intro}
                 </p>
               </Reveal>
             </div>
@@ -85,19 +72,19 @@ export function Sound() {
           <div className="lg:col-span-7">
             <div className="grid gap-3 sm:gap-4">
               {pillars.map((p, i) => (
-                <Reveal key={p.k} delay={i * 0.08}>
+                <Reveal key={p.title} delay={i * 0.08}>
                   <motion.div
                     whileHover={reduce ? undefined : { y: -3 }}
                     transition={{ duration: 0.25, ease: EASE }}
                     className="group panel panel-hover elevate flex items-start gap-6 rounded-2xl p-7"
                   >
                     <span className="font-brush text-4xl leading-none text-brand transition-transform duration-300 group-hover:scale-110">
-                      {p.k}
+                      {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h3 className="font-display text-2xl uppercase tracking-tight">{p.t}</h3>
+                      <h3 className="font-display text-2xl uppercase tracking-tight">{p.title}</h3>
                       <p className="mt-2 text-pretty text-base leading-relaxed text-muted-foreground">
-                        {p.d}
+                        {p.text}
                       </p>
                     </div>
                   </motion.div>

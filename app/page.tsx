@@ -15,8 +15,25 @@ import { Management } from "@/components/sections/management"
 import { Booking } from "@/components/sections/booking"
 import { Reviews } from "@/components/sections/reviews"
 import { FAQ } from "@/components/sections/faq"
+import {
+  getSiteText,
+  getSoundPillars,
+  getStats,
+  getMixtapes,
+  getFaqs,
+} from "@/sanity/queries"
 
-export default function Page() {
+export default async function Page() {
+  // Editable copy comes from Sanity (with local fallback). Fetched once,
+  // server-side, then handed to the (client) sections as props.
+  const [text, pillars, stats, mixtapes, faqs] = await Promise.all([
+    getSiteText(),
+    getSoundPillars(),
+    getStats(),
+    getMixtapes(),
+    getFaqs(),
+  ])
+
   return (
     <>
       <Nav />
@@ -25,21 +42,26 @@ export default function Page() {
             always lands on the bottom edge and the genre marquee below it only
             appears on scroll — independent of the visitor's screen height. */}
         <div className="flex min-h-svh flex-col">
-          <Hero />
+          <Hero bio={text.heroBio} />
           <Ticker />
         </div>
         <NextEvent />
-        <Sound />
-        <About />
-        <Stats />
-        <Mixtapes />
+        <Sound intro={text.soundIntro} pillars={pillars} />
+        <About
+          title={text.aboutTitle}
+          titleAccent={text.aboutTitleAccent}
+          body={text.aboutBody}
+          regions={text.regions}
+        />
+        <Stats quote={text.statsQuote} stats={stats} />
+        <Mixtapes items={mixtapes} />
         <GigHistory />
         <Boombox />
         <EPK />
         <Management />
         <Reviews />
         <Booking />
-        <FAQ />
+        <FAQ items={faqs} />
       </main>
       <Footer />
       <VinylPlayer />

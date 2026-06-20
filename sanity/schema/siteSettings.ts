@@ -1,0 +1,68 @@
+import { defineField, defineType } from "sanity"
+
+/** Singleton holding the general marketing copy (hero, about, sound, stats). */
+export const siteSettings = defineType({
+  name: "siteSettings",
+  title: "Texte / Allgemein",
+  type: "document",
+  groups: [
+    { name: "hero", title: "Hero" },
+    { name: "about", title: "Über mich" },
+    { name: "sound", title: "Sound" },
+    { name: "stats", title: "Zitat" },
+  ],
+  fields: [
+    defineField({
+      name: "heroBio",
+      title: "Hero — Kurzbeschreibung",
+      type: "text",
+      rows: 4,
+      group: "hero",
+      description: "Der Text direkt unter „Urban & Hip-Hop DJ“.",
+    }),
+    defineField({
+      name: "aboutTitle",
+      title: "Über mich — Titel (1. Zeile)",
+      type: "string",
+      group: "about",
+    }),
+    defineField({
+      name: "aboutTitleAccent",
+      title: "Über mich — Titel (2. Zeile, rot)",
+      type: "string",
+      group: "about",
+    }),
+    defineField({
+      name: "aboutBody",
+      title: "Über mich — Text",
+      type: "text",
+      rows: 6,
+      group: "about",
+    }),
+    defineField({
+      name: "regions",
+      title: "Regionen (Pills)",
+      type: "array",
+      of: [{ type: "string" }],
+      group: "about",
+      description: "Kurze Orte/Regionen, z. B. Frankfurt, Stuttgart …",
+    }),
+    defineField({
+      name: "soundIntro",
+      title: "Sound — Einleitungstext",
+      type: "text",
+      rows: 4,
+      group: "sound",
+    }),
+    defineField({
+      name: "statsQuote",
+      title: "Großes Zitat (über dem Crowd-Foto)",
+      type: "text",
+      rows: 3,
+      group: "stats",
+    }),
+  ],
+  preview: {
+    prepare: () => ({ title: "Texte / Allgemein" }),
+  },
+})

@@ -71,3 +71,99 @@ export const reviews: Review[] = [
     rating: 5,
   },
 ]
+
+/* -------------------------------------------------------------------------- */
+/* General editable copy (hero, about, sound, stats) — one CMS singleton.     */
+/* -------------------------------------------------------------------------- */
+
+export type SiteText = {
+  /** Hero self-description under the role bar. */
+  heroBio: string
+  /** Short genre line, reused in the sound intro + ticker context. */
+  tagline: string
+  /** Intro paragraph of the "Welcher Sound" section. */
+  soundIntro: string
+  aboutTitle: string
+  aboutTitleAccent: string
+  aboutBody: string
+  /** Region pills in the About section. */
+  regions: string[]
+  /** Big pull-quote over the crowd photo (Stats section). */
+  statsQuote: string
+}
+
+export const siteText: SiteText = {
+  heroBio:
+    "Ich bin Moogli, Urban-DJ aus dem Raum Heilbronn und Resident im Frankfurter Cooky's Club. Ich lese den Floor und lege Hip-Hop, R'n'B, Afro, Baile Funk und Latin so übereinander, dass die Energie über die ganze Nacht trägt.",
+  tagline: "Hip-Hop. R'n'B. Afro. Baile Funk. Latin.",
+  soundIntro:
+    "Hip-Hop. R'n'B. Afro. Baile Funk. Latin. Meine Handschrift ist die Verbindung. Ich baue aus Sounds verschiedener Welten einen Groove, der niemanden stehen lässt, von der ersten bis zur letzten Stunde.",
+  aboutTitle: "Bundesweit im Einsatz.",
+  aboutTitleAccent: "Zu Hause in den Clubs.",
+  aboutBody:
+    "Ob in Frankfurt, Stuttgart, Heilbronn oder quer durch die Republik: Als DJ Moogli liefere ich den perfekten Sound für unvergessliche Nächte. Mit einem feinen Gespür für feinsten Hip-Hop und Urban Beats begleite ich Clubs, exklusive Events und private Feiern. Vom ersten Warm-up-Track bis zur allerletzten Zugabe sorge ich für die richtige Energie auf dem Dancefloor.",
+  regions: ["Frankfurt", "Stuttgart", "Heilbronn", "Bundesweit"],
+  statsQuote:
+    "Wenn der Raum kippt und alle Hände hochgehen, dafür mache ich das.",
+}
+
+export type SoundPillar = { title: string; text: string }
+
+export const soundPillars: SoundPillar[] = [
+  {
+    title: "Crowd-Reading",
+    text: "Kein Set von der Stange. Ich lese den Floor in Echtzeit und dreh den Vibe genau dann, wenn der Raum danach verlangt.",
+  },
+  {
+    title: "Genre-Crossing",
+    text: "Hip-Hop trifft Afro, R'n'B kippt in Baile Funk, Latin hält die Hüften in Bewegung. Ich mixe das übergangslos und mit Gefühl.",
+  },
+  {
+    title: "Club-Sound",
+    text: "Geschult als Resident im Cooky's Club Frankfurt. Ich bringe Energie, Timing und ein Gespür für den perfekten Drop mit.",
+  },
+]
+
+export type StatItem = { value: string; label: string }
+
+export const statItems: StatItem[] = [
+  { value: "5+", label: "Genres im Set" },
+  { value: "Resident", label: "Cooky's Club FFM" },
+  { value: "2", label: "DJs als Boombox-Society" },
+  { value: "100%", label: "Floor-Energie" },
+]
+
+export type FaqItem = { question: string; answer: string }
+
+export const faqItems: FaqItem[] = [
+  {
+    question: "Welche Musik legt DJ Moogli auf?",
+    answer:
+      "Ich spiele Urban Music mit Schwerpunkt Hip-Hop und R'n'B, dazu Afro, Baile Funk und Latin. Mein Ding ist das Genre-Crossing: Ich führe diese Stile zu einem Groove zusammen, der den Floor die ganze Nacht in Bewegung hält.",
+  },
+  {
+    question: "Wo kann ich DJ Moogli live erleben?",
+    answer:
+      "Live spiele ich regelmäßig als Resident im Cooky's Club in Frankfurt am Main, dazu auf Clubnächten, Festivals und privaten Events. Aktuelle Termine und Mixe findest du auf meinem Instagram (@djmoogli) und auf Mixcloud.",
+  },
+  {
+    question: "Wie kann ich DJ Moogli für mein Event buchen?",
+    answer:
+      "Am schnellsten über das Booking-Formular auf dieser Seite oder direkt per E-Mail an info@djmoogli.de. Offizielle Buchungen und Presseanfragen laufen außerdem über mein Management KOMA Music in Frankfurt (Tel. +49 69 677 38 346).",
+  },
+  {
+    question: "Was ist die Boombox-Society?",
+    answer:
+      "Boombox-Society ist mein DJ-Duo mit DJ Soulrocca. Wir legen back-to-back auf: zwei Handschriften, doppelte Energie und ein durchgehender Flow, ideal für Clubnächte und größere Events.",
+  },
+  {
+    question: "Für welche Art von Events ist DJ Moogli buchbar?",
+    answer:
+      "Ich spiele von Clubnächten und Festivals über Firmenfeiern bis zu privaten Partys und Hochzeiten. Durch mein breites Genre-Spektrum passe ich das Set flexibel an Publikum und Anlass an, vom dezenten Warm-up bis zum Peak-Time-Set.",
+  },
+  {
+    question: "In welcher Region ist DJ Moogli unterwegs?",
+    answer:
+      "Ich komme aus dem Raum Heilbronn und bin Resident in Frankfurt. Gebucht werde ich bundesweit; Anfragen für andere Regionen und das Ausland gehen jederzeit über mein Management.",
+  },
+]

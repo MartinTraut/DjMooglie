@@ -9,10 +9,19 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { BrushStroke, ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
-const regions = ["Frankfurt", "Stuttgart", "Heilbronn", "Bundesweit"]
-
-export function About() {
+export function About({
+  title = siteText.aboutTitle,
+  titleAccent = siteText.aboutTitleAccent,
+  body = siteText.aboutBody,
+  regions = siteText.regions,
+}: {
+  title?: string
+  titleAccent?: string
+  body?: string
+  regions?: string[]
+}) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -35,14 +44,14 @@ export function About() {
               <SectionLabel>{site.about.kicker}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
-                  {site.about.title}
+                  {title}
                   <br />
-                  <span className="text-brand">{site.about.titleAccent}</span>
+                  <span className="text-brand">{titleAccent}</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-                  {site.about.body}
+                  {body}
                 </p>
               </Reveal>
               <Reveal delay={0.18}>

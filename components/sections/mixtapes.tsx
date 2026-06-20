@@ -11,7 +11,11 @@ import { site } from "@/lib/site"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-export function Mixtapes() {
+export function Mixtapes({
+  items = site.mixtapes,
+}: {
+  items?: readonly { title: string; desc: string; tag: string; href: string }[]
+}) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -65,7 +69,7 @@ export function Mixtapes() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-3">
-          {site.mixtapes.map((m, i) => (
+          {items.map((m, i) => (
             <Reveal key={m.title} delay={i * 0.08}>
               <motion.a
                 href={m.href}
