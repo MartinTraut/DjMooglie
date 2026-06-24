@@ -4,7 +4,7 @@ import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { Media } from "@/components/shared/media"
-import { getNextEvent } from "@/sanity/queries"
+import { getNextEvent } from "@/lib/cms/queries"
 
 export async function NextEvent() {
   const nextEvent = await getNextEvent()

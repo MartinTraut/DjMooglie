@@ -2,7 +2,7 @@ import { Quote, Star } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
-import { getReviews } from "@/sanity/queries"
+import { getReviews } from "@/lib/cms/queries"
 
 export async function Reviews() {
   const reviews = await getReviews()

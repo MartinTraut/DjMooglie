@@ -22,10 +22,10 @@ import {
   getStats,
   getMixtapes,
   getFaqs,
-} from "@/sanity/queries"
+} from "@/lib/cms/queries"
 
 export default async function Page() {
-  // Editable copy + images come from Sanity (with local fallback). Fetched
+  // Editable copy + images come from Supabase (with local fallback). Fetched
   // once, server-side, then handed to the (client) sections as props.
   const [text, images, pillars, stats, mixtapes, faqs] = await Promise.all([
     getSiteText(),

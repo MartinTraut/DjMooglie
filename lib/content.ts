@@ -1,13 +1,11 @@
 /**
  * EDITABLE CONTENT — the parts DJ Moogli maintains himself.
  *
- * These two blocks (next gig + reviews) are deliberately split out of
- * `site.ts` because they change often. In step 2 this file becomes the
- * fallback while the same shapes are served from a CMS (Sanity), so the
- * sections keep rendering even before/without the CMS.
+ * These blocks are the local FALLBACK for the content served from Supabase
+ * (see lib/cms/queries.ts). When Supabase is unreachable, not yet configured
+ * or still empty, the sections render these values — so the site never breaks.
  *
- * Until the portal is live, edit the values here. Placeholders are marked
- * `TODO:` — replace them with real data before launch.
+ * Placeholders are marked `TODO:` — the DJ replaces them via the admin portal.
  */
 
 export type NextEvent = {
