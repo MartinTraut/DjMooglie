@@ -119,11 +119,16 @@
     body {
         @apply bg-background text-foreground;
         font-feature-settings: "ss01", "cv01";
+        /* Never scroll sideways: oversized decorative numbers / watermarks may
+           overhang the viewport — clip them instead of creating a mobile
+           horizontal scrollbar. `clip` keeps position:sticky (nav) working. */
+        overflow-x: clip;
     }
     html {
         @apply font-sans;
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
+        overflow-x: clip;
     }
     /* Lenis smooth-scroll: JS takes over, so disable native smoothing while active */
     html.lenis,

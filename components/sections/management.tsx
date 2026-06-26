@@ -10,11 +10,15 @@ export function Management() {
   return (
     <section id="management" className="scroll-mt-20 border-t border-border py-20 sm:py-28">
       <Container>
-        <div className="panel elevate relative overflow-hidden rounded-3xl">
-          <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-12 lg:p-16">
-            <div className="brand-spot pointer-events-none absolute inset-0 opacity-40" aria-hidden />
-            <ChapterNumber n="6" className="-top-6 right-2 opacity-60" />
-            <div className="relative lg:col-span-6">
+        <div className="relative">
+          <ChapterNumber
+            n="6"
+            className="-top-10 right-2 z-10 opacity-60 sm:-top-14"
+          />
+          <div className="panel elevate relative overflow-hidden rounded-3xl">
+            <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-12 lg:p-16">
+              <div className="brand-spot pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+              <div className="relative lg:col-span-6">
               <SectionLabel>Management</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
@@ -71,6 +75,7 @@ export function Management() {
               </a>
               <MapCard address={m.address} query={encodeURIComponent(m.address)} />
             </Reveal>
+            </div>
           </div>
         </div>
       </Container>
