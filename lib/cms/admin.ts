@@ -55,6 +55,15 @@ const EMPTY_CONTENT: SiteContentDraft = {
  * crashing.
  */
 export async function loadAdminData(): Promise<AdminData | null> {
+  // Env not configured (e.g. missing/empty in Vercel) → behave like "DB not
+  // set up" and show the setup hint instead of crashing the page with a 500.
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ) {
+    return null
+  }
+
   const supabase = await createClient()
 
   const contentRes = await supabase
