@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "@/lib/supabase/config"
 import type { SiteContentDraft } from "@/app/admin/actions"
 
 export type AdminReview = {
@@ -55,14 +56,10 @@ const EMPTY_CONTENT: SiteContentDraft = {
  * crashing.
  */
 export async function loadAdminData(): Promise<AdminData | null> {
-  // Env not configured (e.g. missing/empty in Vercel) → behave like "DB not
-  // set up" and show the setup hint instead of crashing the page with a 500.
-  if (
-    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  ) {
-    return null
-  }
+  // Credentials missing → behave like "DB not set up" and show the setup hint
+  // instead of crashing the page with a 500. (With the baked-in public defaults
+  // in lib/supabase/config this normally never triggers.)
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null
 
   const supabase = await createClient()
 

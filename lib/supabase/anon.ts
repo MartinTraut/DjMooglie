@@ -1,22 +1,22 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js"
+import { SUPABASE_ANON_KEY, SUPABASE_URL } from "./config"
 
 /**
  * Cookie-less anon client for PUBLIC reads on the website.
  * RLS allows anonymous SELECT, so this is safe.
  *
- * Returns null when the env vars are missing (e.g. before they are set in
- * Vercel) instead of throwing — callers then fall back to local content,
- * so the site never crashes.
+ * Uses the public credentials from ./config (env vars first, baked-in public
+ * defaults as fallback), so reads work even before the Vercel env vars are set.
  */
 let cached: SupabaseClient | null | undefined
 
 export function getPublicClient(): SupabaseClient | null {
   if (cached !== undefined) return cached
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   cached =
-    url && key
-      ? createClient(url, key, { auth: { persistSession: false } })
+    SUPABASE_URL && SUPABASE_ANON_KEY
+      ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+          auth: { persistSession: false },
+        })
       : null
   return cached
 }
