@@ -574,6 +574,37 @@ export function Editor({ initial }: { initial: AdminData }) {
             />
           </SectionCard>
 
+          {/* Boombox-Society */}
+          <SectionCard
+            title="Boombox-Society"
+            hint="Dein DJ-Duo. Texte für den Boombox-Society Bereich."
+          >
+            <TextField
+              label="Tagline"
+              value={c.duo_tagline}
+              onChange={(v) => setContent({ duo_tagline: v })}
+              placeholder="The Urban Sound Experience"
+            />
+            <TextField
+              label="Claim (kleine rote Zeile)"
+              value={c.duo_claim}
+              onChange={(v) => setContent({ duo_claim: v })}
+              placeholder="Zwei Artists. Eine Vision. Maximale Energie."
+            />
+            <TextField
+              label="Partner-DJ (Name)"
+              value={c.duo_partner}
+              onChange={(v) => setContent({ duo_partner: v })}
+              placeholder="DJ Soulrocca"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.duo_description}
+              onChange={(v) => setContent({ duo_description: v })}
+              multiline
+            />
+          </SectionCard>
+
           {/* Bilder */}
           <SectionCard title="Weitere Bilder" hint="Boombox-Society & EPK.">
             <ImageField

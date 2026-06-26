@@ -22,18 +22,20 @@ import {
   getStats,
   getMixtapes,
   getFaqs,
+  getDuo,
 } from "@/lib/cms/queries"
 
 export default async function Page() {
   // Editable copy + images come from Supabase (with local fallback). Fetched
   // once, server-side, then handed to the (client) sections as props.
-  const [text, images, pillars, stats, mixtapes, faqs] = await Promise.all([
+  const [text, images, pillars, stats, mixtapes, faqs, duo] = await Promise.all([
     getSiteText(),
     getSiteImages(),
     getSoundPillars(),
     getStats(),
     getMixtapes(),
     getFaqs(),
+    getDuo(),
   ])
 
   return (
@@ -59,7 +61,7 @@ export default async function Page() {
         <Stats quote={text.statsQuote} stats={stats} image={images.stats} />
         <Mixtapes items={mixtapes} />
         <GigHistory />
-        <Boombox image={images.boombox} />
+        <Boombox image={images.boombox} duo={duo} />
         <EPK images={images.epk} />
         <Management />
         <Reviews />

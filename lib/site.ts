@@ -187,12 +187,13 @@ export const site = {
 
 export type Site = typeof site;
 
+// Reihenfolge = Reihenfolge der Sektionen auf der Seite (siehe app/page.tsx).
 export const nav = [
   { href: "#event", label: "Live" },
   { href: "#sound", label: "Sound" },
   { href: "#about", label: "Über mich" },
   { href: "#mixtapes", label: "Mixtapes" },
-  { href: "#rezensionen", label: "Rezensionen" },
   { href: "#boombox", label: "Boombox-Society" },
   { href: "#epk", label: "EPK" },
+  { href: "#rezensionen", label: "Rezensionen" },
 ] as const;

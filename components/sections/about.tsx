@@ -41,7 +41,7 @@ export function About({
         <div className="grid items-center gap-12 lg:grid-cols-12">
           {/* Copy */}
           <div className="relative order-2 lg:order-1 lg:col-span-7 lg:pr-6">
-            <ChapterNumber n="01" className="-top-20 left-0 lg:-left-4" />
+            <ChapterNumber n="2" className="-top-20 left-0 lg:-left-4" />
             <div className="relative">
               <SectionLabel>{site.about.kicker}</SectionLabel>
               <Reveal>

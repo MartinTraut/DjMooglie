@@ -36,10 +36,10 @@ export type Review = {
 // TODO: echten nächsten Gig eintragen (oder active:false, wenn gerade keiner ansteht).
 export const nextEvent: NextEvent = {
   active: true,
-  date: "Sa · 12. Juli 2026",
+  date: "Samstag, 12. Juli 2026",
   venue: "Cooky's Club",
   city: "Frankfurt am Main",
-  note: "Resident Night · Urban & Hip-Hop · ab 23 Uhr",
+  note: "Resident Night, Urban und Hip-Hop, ab 23 Uhr",
   ticketUrl: "",
   image: null,
 }
@@ -49,9 +49,9 @@ export const nextEvent: NextEvent = {
 export const reviews: Review[] = [
   {
     quote:
-      "Liest den Floor wie kaum ein anderer. Aus einem ruhigen Warm-up wurde innerhalb von Minuten eine volle Tanzfläche — und die blieb bis zum Schluss.",
+      "Liest den Floor wie kaum ein anderer. Aus einem ruhigen Warm-up wurde innerhalb von Minuten eine volle Tanzfläche, und die blieb bis zum Schluss.",
     author: "Platzhalter-Stimme",
-    role: "Club-Booking · Frankfurt",
+    role: "Club-Booking, Frankfurt",
     rating: 5,
   },
   {

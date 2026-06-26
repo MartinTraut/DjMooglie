@@ -46,7 +46,7 @@ export function Booking() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Intro + direct contact */}
           <div className="relative lg:col-span-5">
-            <ChapterNumber n="7" className="-top-16 -left-2 lg:-left-6" />
+            <ChapterNumber n="8" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative">
               <SectionLabel>Kontakt & Booking</SectionLabel>
               <Reveal>

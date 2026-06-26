@@ -53,7 +53,10 @@ export function ChapterNumber({
     <span
       aria-hidden
       className={cn(
-        "chapter-num pointer-events-none absolute select-none text-[clamp(7rem,22vw,18rem)]",
+        // Decorative magazine numeral. Hidden on phones — it's positioned to
+        // bleed into the page gutter, which doesn't exist on small screens, so
+        // it would clip and look broken. From md up there's room for the accent.
+        "chapter-num pointer-events-none absolute hidden select-none text-[clamp(7rem,16vw,18rem)] md:block",
         className
       )}
     >

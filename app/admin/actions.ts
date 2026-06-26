@@ -56,6 +56,10 @@ export type SiteContentDraft = {
   about_body: string
   regions: string[]
   stats_quote: string
+  duo_tagline: string
+  duo_claim: string
+  duo_partner: string
+  duo_description: string
   img_hero: string | null
   img_about: string | null
   img_stats: string | null

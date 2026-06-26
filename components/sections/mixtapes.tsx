@@ -38,7 +38,7 @@ export function Mixtapes({
       <Container className="relative">
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="relative">
-            <ChapterNumber n="2" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
+            <ChapterNumber n="3" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
             <SectionLabel>Mixtapes · Mixcloud</SectionLabel>
             <Reveal>
               <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">

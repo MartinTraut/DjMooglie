@@ -9,11 +9,15 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { BrushStroke, ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import type { DuoText } from "@/lib/cms/queries"
 
 export function Boombox({
   image = site.assets.boombox,
+  duo = site.duo,
 }: {
   image?: string | null
+  /** Editable copy from the CMS; falls back to the static duo block. */
+  duo?: DuoText
 }) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
@@ -42,7 +46,7 @@ export function Boombox({
               >
                 <Media
                   src={image}
-                  alt={`${site.duo.name}: DJ Moogli & ${site.duo.partner}, back to back`}
+                  alt={`${site.duo.name}: DJ Moogli & ${duo.partner}, back to back`}
                   label="Boombox-Society"
                   sizes="(max-width: 1024px) 80vw, 24rem"
                   className="aspect-[2/3] w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
@@ -55,7 +59,7 @@ export function Boombox({
           </Reveal>
 
           <div className="relative lg:col-span-7 lg:pl-6">
-            <ChapterNumber n="4" className="-top-20 right-0 lg:right-4" />
+            <ChapterNumber n="5" className="-top-20 right-0 lg:right-4" />
             <div className="relative">
               <SectionLabel>Das Duo · B2B</SectionLabel>
               <Reveal>
@@ -67,15 +71,15 @@ export function Boombox({
               </Reveal>
               <Reveal delay={0.06}>
                 <p className="mt-4 font-display text-lg uppercase tracking-tight text-foreground sm:text-xl">
-                  {site.duo.tagline}
+                  {duo.tagline}
                   <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.18em] text-brand">
-                    {site.duo.claim}
+                    {duo.claim}
                   </span>
                 </p>
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-                  {site.duo.description}
+                  {duo.description}
                 </p>
               </Reveal>
 
@@ -139,7 +143,7 @@ export function Boombox({
                     rel="noopener noreferrer"
                     className="rounded-full border border-border bg-card px-7 py-3.5 font-display text-lg uppercase tracking-tight transition-colors hover:border-brand hover:text-brand sm:text-xl"
                   >
-                    {site.duo.partner}
+                    {duo.partner}
                   </a>
                 </div>
               </Reveal>

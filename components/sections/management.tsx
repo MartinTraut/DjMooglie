@@ -12,7 +12,7 @@ export function Management() {
       <Container>
         <div className="relative">
           <ChapterNumber
-            n="6"
+            n="7"
             className="-top-10 right-2 z-10 opacity-60 sm:-top-14"
           />
           <div className="panel elevate relative overflow-hidden rounded-3xl">

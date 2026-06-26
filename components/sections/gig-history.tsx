@@ -42,7 +42,7 @@ export function GigHistory() {
       <Container className="relative">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="relative min-w-0 lg:col-span-4">
-            <ChapterNumber n="3" className="-top-16 -left-2 lg:-left-6" />
+            <ChapterNumber n="4" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative lg:sticky lg:top-28">
               <SectionLabel>Referenzen · Gig History</SectionLabel>
               <Reveal>

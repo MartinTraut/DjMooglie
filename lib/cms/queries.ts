@@ -18,6 +18,14 @@ import {
 
 export type Mixtape = { title: string; desc: string; tag: string; href: string }
 
+/** Editable Boombox-Society copy (the rest of the duo block stays in site.ts). */
+export type DuoText = {
+  tagline: string
+  claim: string
+  partner: string
+  description: string
+}
+
 export type SiteImages = {
   hero: string | null
   about: string | null
@@ -83,6 +91,25 @@ export async function getSiteImages(): Promise<SiteImages> {
     stats: (d.img_stats as string) ?? fallback.stats,
     boombox: (d.img_boombox as string) ?? fallback.boombox,
     epk: epk && epk.length > 0 ? epk : fallback.epk,
+  }
+}
+
+export async function getDuo(): Promise<DuoText> {
+  const fb = site.duo
+  const d = await getContentRow()
+  if (!d) {
+    return {
+      tagline: fb.tagline,
+      claim: fb.claim,
+      partner: fb.partner,
+      description: fb.description,
+    }
+  }
+  return {
+    tagline: (d.duo_tagline as string) || fb.tagline,
+    claim: (d.duo_claim as string) || fb.claim,
+    partner: (d.duo_partner as string) || fb.partner,
+    description: (d.duo_description as string) || fb.description,
   }
 }
 

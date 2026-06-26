@@ -18,6 +18,11 @@ create table if not exists public.site_content (
   about_body         text not null default '',
   regions            text[] not null default '{}',
   stats_quote        text not null default '',
+  -- Boombox-Society (DJ-Duo) Texte
+  duo_tagline        text not null default '',
+  duo_claim          text not null default '',
+  duo_partner        text not null default '',
+  duo_description    text not null default '',
   -- Bilder (null => Frontend nutzt das lokale Standardbild als Fallback)
   img_hero           text,
   img_about          text,
@@ -130,6 +135,7 @@ create policy "auth manage site-images" on storage.objects
 -- ---------------------------------------------------------------------------
 insert into public.site_content (id, hero_bio, tagline, sound_intro,
   about_title, about_title_accent, about_body, regions, stats_quote,
+  duo_tagline, duo_claim, duo_partner, duo_description,
   event_active, event_date, event_venue, event_city, event_note, event_ticket_url)
 values (
   1,

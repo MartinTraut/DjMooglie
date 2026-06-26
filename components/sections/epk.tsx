@@ -43,7 +43,7 @@ export function EPK({
       <Container className="relative">
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="relative">
-            <ChapterNumber n="5" className="-top-16 right-0 translate-x-1/3" />
+            <ChapterNumber n="6" className="-top-16 right-0 translate-x-1/3" />
             <SectionLabel>Electronic Press Kit</SectionLabel>
             <Reveal>
               <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
