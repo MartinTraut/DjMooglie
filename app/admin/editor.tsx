@@ -38,7 +38,7 @@ function TextField({
     "w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-brand focus:bg-white/10"
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium text-neutral-400">{label}</span>
+      <span className="text-xs font-medium text-neutral-300">{label}</span>
       {multiline ? (
         <textarea
           value={value}
@@ -85,14 +85,14 @@ function ImageField({
 
   return (
     <div className="flex flex-col gap-1.5">
-      <span className="text-xs font-medium text-neutral-400">{label}</span>
+      <span className="text-xs font-medium text-neutral-300">{label}</span>
       <div className="flex items-center gap-3">
         <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-white/5">
           {value ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={value} alt="" className="h-full w-full object-cover" />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-neutral-600">
+            <div className="flex h-full w-full items-center justify-center text-neutral-300">
               <ImagePlus className="h-5 w-5" />
             </div>
           )}
@@ -152,7 +152,7 @@ function SectionCard({
         <h2 className="text-sm font-bold uppercase tracking-wider text-foreground">
           {title}
         </h2>
-        {hint && <p className="mt-0.5 text-xs text-neutral-500">{hint}</p>}
+        {hint && <p className="mt-0.5 text-xs text-neutral-300">{hint}</p>}
       </div>
       <div className="flex flex-col gap-4">{children}</div>
     </section>
@@ -198,7 +198,7 @@ function ListEditor<T>({
               type="button"
               onClick={() => move(i, -1)}
               disabled={i === 0}
-              className="rounded p-1 text-neutral-500 hover:bg-white/5 hover:text-foreground disabled:opacity-30"
+              className="rounded p-1 text-neutral-300 hover:bg-white/5 hover:text-foreground disabled:opacity-30"
             >
               <ChevronUp className="h-3.5 w-3.5" />
             </button>
@@ -206,7 +206,7 @@ function ListEditor<T>({
               type="button"
               onClick={() => move(i, 1)}
               disabled={i === items.length - 1}
-              className="rounded p-1 text-neutral-500 hover:bg-white/5 hover:text-foreground disabled:opacity-30"
+              className="rounded p-1 text-neutral-300 hover:bg-white/5 hover:text-foreground disabled:opacity-30"
             >
               <ChevronDown className="h-3.5 w-3.5" />
             </button>
@@ -355,7 +355,7 @@ export function Editor({ initial }: { initial: AdminData }) {
               multiline
             />
             <div>
-              <p className="mb-2 text-xs font-medium text-neutral-400">Säulen</p>
+              <p className="mb-2 text-xs font-medium text-neutral-300">Säulen</p>
               <ListEditor
                 items={draft.sound_pillars}
                 onChange={(v) => setDraft((d) => ({ ...d, sound_pillars: v }))}
@@ -399,7 +399,7 @@ export function Editor({ initial }: { initial: AdminData }) {
               multiline
             />
             <div>
-              <p className="mb-2 text-xs font-medium text-neutral-400">
+              <p className="mb-2 text-xs font-medium text-neutral-300">
                 Regionen (Pills)
               </p>
               <ListEditor
@@ -434,7 +434,7 @@ export function Editor({ initial }: { initial: AdminData }) {
               multiline
             />
             <div>
-              <p className="mb-2 text-xs font-medium text-neutral-400">Zahlen</p>
+              <p className="mb-2 text-xs font-medium text-neutral-300">Zahlen</p>
               <ListEditor
                 items={draft.stat_items}
                 onChange={(v) => setDraft((d) => ({ ...d, stat_items: v }))}
@@ -526,7 +526,7 @@ export function Editor({ initial }: { initial: AdminData }) {
                       onChange={(v) => update({ role: v })}
                     />
                     <label className="flex flex-col gap-1.5">
-                      <span className="text-xs font-medium text-neutral-400">
+                      <span className="text-xs font-medium text-neutral-300">
                         Sterne
                       </span>
                       <select
@@ -582,7 +582,7 @@ export function Editor({ initial }: { initial: AdminData }) {
               onChange={(v) => setContent({ img_boombox: v })}
             />
             <div>
-              <p className="mb-2 text-xs font-medium text-neutral-400">
+              <p className="mb-2 text-xs font-medium text-neutral-300">
                 EPK-Galerie
               </p>
               <ListEditor
@@ -626,7 +626,7 @@ export function Editor({ initial }: { initial: AdminData }) {
                   type="button"
                   onClick={() => setDraft(baseline)}
                   disabled={pending}
-                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium text-neutral-400 hover:text-foreground disabled:opacity-50"
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium text-neutral-300 hover:text-foreground disabled:opacity-50"
                 >
                   <X className="h-3.5 w-3.5" /> Verwerfen
                 </button>

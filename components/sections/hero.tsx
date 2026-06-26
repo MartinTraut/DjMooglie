@@ -98,11 +98,11 @@ export function Hero({
         >
           <p className="font-display text-[clamp(1.85rem,6vw,4rem)] uppercase leading-none tracking-tight">
             <span className="text-brand">Urban</span>{" "}
-            <span className="text-neutral-400">&amp;</span>{" "}
+            <span className="text-neutral-300">&amp;</span>{" "}
             <span className="text-brand">Hip-Hop</span>{" "}
             <span className="text-neutral-950">DJ</span>
           </p>
-          <p className="mx-auto mt-3 max-w-xl text-pretty text-sm leading-relaxed text-neutral-600 sm:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-base leading-relaxed text-neutral-200 sm:text-lg">
             {bio}
           </p>
 

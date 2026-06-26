@@ -83,7 +83,7 @@ export function Sound({
                     </span>
                     <div>
                       <h3 className="font-display text-2xl uppercase tracking-tight">{p.title}</h3>
-                      <p className="mt-2 text-pretty text-base leading-relaxed text-muted-foreground">
+                      <p className="mt-2 text-pretty text-lg leading-relaxed text-muted-foreground">
                         {p.text}
                       </p>
                     </div>

@@ -40,7 +40,7 @@ export default async function AdminPage() {
           <h2 className="text-lg font-semibold text-foreground">
             Datenbank noch nicht eingerichtet
           </h2>
-          <p className="mt-2 text-sm text-neutral-400">
+          <p className="mt-2 text-sm text-neutral-300">
             Führe die Datei{" "}
             <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">
               supabase/migrations/0001_init.sql

@@ -17,7 +17,7 @@ export default function LoginPage() {
           <h1 className="mt-2 text-2xl font-bold text-foreground">
             Admin-Bereich
           </h1>
-          <p className="mt-1 text-sm text-neutral-400">
+          <p className="mt-1 text-sm text-neutral-300">
             Melde dich an, um deine Seite zu bearbeiten.
           </p>
         </div>

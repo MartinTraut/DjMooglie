@@ -10,7 +10,7 @@ export function LoginForm() {
   return (
     <form action={action} className="flex flex-col gap-4">
       <label className="flex flex-col gap-1.5">
-        <span className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+        <span className="text-xs font-medium uppercase tracking-wider text-neutral-300">
           E-Mail
         </span>
         <input
@@ -23,7 +23,7 @@ export function LoginForm() {
       </label>
 
       <label className="flex flex-col gap-1.5">
-        <span className="text-xs font-medium uppercase tracking-wider text-neutral-400">
+        <span className="text-xs font-medium uppercase tracking-wider text-neutral-300">
           Passwort
         </span>
         <input

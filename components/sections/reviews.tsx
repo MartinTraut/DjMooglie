@@ -37,7 +37,7 @@ export async function Reviews() {
               <figure className="group panel panel-hover elevate flex h-full flex-col justify-between gap-8 rounded-2xl p-7">
                 <div>
                   <Quote className="h-7 w-7 text-brand/80" aria-hidden />
-                  <blockquote className="mt-5 text-pretty text-base leading-relaxed text-foreground/90">
+                  <blockquote className="mt-5 text-pretty text-lg leading-relaxed text-foreground">
                     {r.quote}
                   </blockquote>
                 </div>

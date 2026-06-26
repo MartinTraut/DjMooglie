@@ -64,9 +64,9 @@ export function Management() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Instagram ${site.socials.instagramHandle}`}
-                className="group mt-4 flex w-full items-center justify-center gap-3 rounded-2xl border border-border bg-card px-6 py-5 text-base font-bold uppercase tracking-[0.12em] text-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-brand-foreground"
+                className="group mt-4 flex w-full items-center justify-center gap-3.5 rounded-2xl border border-border bg-card px-6 py-6 text-lg font-bold uppercase tracking-[0.16em] text-foreground transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-brand-foreground sm:text-xl"
               >
-                <InstagramGlyph className="h-6 w-6" />
+                <InstagramGlyph className="h-7 w-7" />
                 {site.socials.instagramHandle}
               </a>
               <MapCard address={m.address} query={encodeURIComponent(m.address)} />

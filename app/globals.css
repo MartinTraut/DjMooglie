@@ -78,8 +78,8 @@
     --secondary: oklch(0.2 0.004 264);
     --secondary-foreground: oklch(0.975 0 0);
     --muted: oklch(0.18 0.004 264);
-    /* Body/secondary text — lifted for readability on the near-black base. */
-    --muted-foreground: oklch(0.75 0.011 264);
+    /* Body/secondary text — lifted bright for high readability on near-black. */
+    --muted-foreground: oklch(0.84 0.012 264);
     --accent: oklch(0.2 0.004 264);
     --accent-foreground: oklch(0.975 0 0);
 
