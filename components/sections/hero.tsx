@@ -114,11 +114,11 @@ export function Hero({
               Booking anfragen
             </Link>
             <Link
-              href="#rezensionen"
+              href="#referenzen"
               className="group inline-flex items-center gap-2.5 rounded-full border border-neutral-300 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-neutral-950 transition-all duration-200 hover:-translate-y-0.5 hover:border-brand hover:text-brand"
             >
               <Star className="h-3.5 w-3.5 fill-brand text-brand transition-transform group-hover:scale-110" />
-              Rezensionen ansehen
+              Referenzen ansehen
             </Link>
           </div>
         </motion.div>

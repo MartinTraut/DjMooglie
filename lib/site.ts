@@ -195,5 +195,5 @@ export const nav = [
   { href: "#mixtapes", label: "Mixtapes" },
   { href: "#boombox", label: "Boombox-Society" },
   { href: "#epk", label: "EPK" },
-  { href: "#rezensionen", label: "Rezensionen" },
+  { href: "#referenzen", label: "Referenzen" },
 ] as const;

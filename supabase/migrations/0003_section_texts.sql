@@ -17,7 +17,7 @@ alter table public.site_content
   add column if not exists about_eyebrow         text not null default '',
   -- Nächster Gig
   add column if not exists event_eyebrow         text not null default '',
-  -- Rezensionen
+  -- Referenzen
   add column if not exists reviews_eyebrow       text not null default '',
   add column if not exists reviews_intro         text not null default '',
   -- Referenzen / Gig History
@@ -44,8 +44,8 @@ update public.site_content set
   sound_eyebrow        = 'Welcher Sound',
   about_eyebrow        = 'Über mich',
   event_eyebrow        = 'Live · Nächster Gig',
-  reviews_eyebrow      = 'Stimmen · Rezensionen',
-  reviews_intro        = 'Rückmeldungen von Clubs, Veranstaltern und Gästen — der ehrlichste Maßstab für einen DJ.',
+  reviews_eyebrow      = 'Stimmen · Referenzen',
+  reviews_intro        = 'Rückmeldungen von Clubs, Veranstaltern und Gästen. Der ehrlichste Maßstab für einen DJ.',
   gigs_eyebrow         = 'Referenzen · Gig History',
   gigs_intro           = 'Ich bin Resident im Frankfurter Cooky''s und lege quer durch Deutschland auf. Von Clubs über Großraumdiscos bis Private Bookings. Eine Auswahl meiner Stationen.',
   epk_eyebrow          = 'Electronic Press Kit',

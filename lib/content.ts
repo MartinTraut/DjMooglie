@@ -141,9 +141,9 @@ export const siteText: SiteText = {
   aboutEyebrow: "Über mich",
   eventEyebrow: "Live · Nächster Gig",
   boomboxEyebrow: "Das Duo · B2B",
-  reviewsEyebrow: "Stimmen · Rezensionen",
+  reviewsEyebrow: "Stimmen · Referenzen",
   reviewsIntro:
-    "Rückmeldungen von Clubs, Veranstaltern und Gästen — der ehrlichste Maßstab für einen DJ.",
+    "Rückmeldungen von Clubs, Veranstaltern und Gästen. Der ehrlichste Maßstab für einen DJ.",
   gigsEyebrow: "Referenzen · Gig History",
   gigsIntro:
     "Ich bin Resident im Frankfurter Cooky's und lege quer durch Deutschland auf. Von Clubs über Großraumdiscos bis Private Bookings. Eine Auswahl meiner Stationen.",

@@ -1,7 +1,7 @@
-import { Quote, Star } from "lucide-react"
 import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
+import { ReviewCard } from "@/components/sections/review-card"
 import { getReviews } from "@/lib/cms/queries"
 import { siteText } from "@/lib/content"
 
@@ -17,7 +17,7 @@ export async function Reviews({
 
   return (
     <section
-      id="rezensionen"
+      id="referenzen"
       className="relative scroll-mt-20 overflow-hidden border-t border-border py-24 sm:py-32"
     >
       <Container>
@@ -31,7 +31,7 @@ export async function Reviews({
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-md text-pretty text-xl font-medium leading-relaxed text-foreground/90">
               {intro}
             </p>
           </Reveal>
@@ -40,39 +40,7 @@ export async function Reviews({
         <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-3">
           {reviews.map((r, i) => (
             <Reveal key={`${r.author}-${i}`} delay={i * 0.08}>
-              <figure className="group panel panel-hover elevate flex h-full flex-col justify-between gap-8 rounded-2xl p-7">
-                <div>
-                  <Quote className="h-7 w-7 text-brand/80" aria-hidden />
-                  <blockquote className="mt-5 text-pretty text-lg leading-relaxed text-foreground">
-                    {r.quote}
-                  </blockquote>
-                </div>
-                <figcaption className="border-t border-border pt-5">
-                  {typeof r.rating === "number" && (
-                    <div className="mb-3 flex gap-0.5" aria-label={`${r.rating} von 5 Sternen`}>
-                      {Array.from({ length: 5 }).map((_, s) => (
-                        <Star
-                          key={s}
-                          className={
-                            s < r.rating!
-                              ? "h-4 w-4 fill-brand text-brand"
-                              : "h-4 w-4 text-muted-foreground/30"
-                          }
-                          aria-hidden
-                        />
-                      ))}
-                    </div>
-                  )}
-                  <p className="font-display text-lg uppercase leading-none tracking-tight">
-                    {r.author}
-                  </p>
-                  {r.role && (
-                    <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                      {r.role}
-                    </p>
-                  )}
-                </figcaption>
-              </figure>
+              <ReviewCard review={r} />
             </Reveal>
           ))}
         </div>

@@ -539,13 +539,13 @@ export function Editor({ initial }: { initial: AdminData }) {
             />
           </SectionCard>
 
-          {/* Rezensionen */}
-          <SectionCard title="Rezensionen" hint="Stimmen zufriedener Kunden.">
+          {/* Referenzen */}
+          <SectionCard title="Referenzen" hint="Stimmen zufriedener Kunden.">
             <TextField
               label="Kleine Zeile (Eyebrow)"
               value={c.reviews_eyebrow}
               onChange={(v) => setContent({ reviews_eyebrow: v })}
-              placeholder="Stimmen · Rezensionen"
+              placeholder="Stimmen · Referenzen"
             />
             <TextField
               label="Beschreibung"
@@ -558,7 +558,7 @@ export function Editor({ initial }: { initial: AdminData }) {
               items={draft.reviews}
               onChange={(v) => setDraft((d) => ({ ...d, reviews: v }))}
               blank={() => ({ quote: "", author: "", role: "", rating: 5 })}
-              addLabel="Rezension hinzufügen"
+              addLabel="Referenz hinzufügen"
               renderRow={(item, update) => (
                 <>
                   <TextField
