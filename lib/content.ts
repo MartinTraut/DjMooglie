@@ -88,6 +88,31 @@ export type SiteText = {
   regions: string[]
   /** Big pull-quote over the crowd photo (Stats section). */
   statsQuote: string
+  /** Eyebrow / section label of the "Music" (Mixtapes) section. */
+  musicEyebrow: string
+  /** Headline of the "Music" (Mixtapes) section. */
+  musicTitle: string
+  /** Intro paragraph under the "Music" headline. */
+  musicIntro: string
+  /** Booking / contact section header. */
+  bookingEyebrow: string
+  bookingTitle: string
+  bookingTitleAccent: string
+  bookingIntro: string
+  /** Eyebrows for the remaining sections (label above each headline). */
+  soundEyebrow: string
+  aboutEyebrow: string
+  eventEyebrow: string
+  boomboxEyebrow: string
+  /** Reviews, Gig-History, EPK & Management header copy. */
+  reviewsEyebrow: string
+  reviewsIntro: string
+  gigsEyebrow: string
+  gigsIntro: string
+  epkEyebrow: string
+  epkIntro: string
+  managementEyebrow: string
+  managementIntro: string
 }
 
 export const siteText: SiteText = {
@@ -103,6 +128,31 @@ export const siteText: SiteText = {
   regions: ["Frankfurt", "Stuttgart", "Heilbronn", "Bundesweit"],
   statsQuote:
     "Wenn der Raum kippt und alle Hände hochgehen, dafür mache ich das.",
+  musicEyebrow: "Mixtapes · Mixcloud",
+  musicTitle: "Music",
+  musicIntro:
+    "Hör rein, bevor du buchst. Eine Auswahl aus der Cooky's-Booth, tropical Heat und meinen späten Latin-Stunden.",
+  bookingEyebrow: "Kontakt & Booking",
+  bookingTitle: "Book",
+  bookingTitleAccent: "Contact",
+  bookingIntro:
+    "Club-Night, Festival, Firmenevent oder Private Party? Schick mir die Eckdaten, du bekommst zeitnah eine Rückmeldung, direkt von mir oder über mein Management.",
+  soundEyebrow: "Welcher Sound",
+  aboutEyebrow: "Über mich",
+  eventEyebrow: "Live · Nächster Gig",
+  boomboxEyebrow: "Das Duo · B2B",
+  reviewsEyebrow: "Stimmen · Rezensionen",
+  reviewsIntro:
+    "Rückmeldungen von Clubs, Veranstaltern und Gästen — der ehrlichste Maßstab für einen DJ.",
+  gigsEyebrow: "Referenzen · Gig History",
+  gigsIntro:
+    "Ich bin Resident im Frankfurter Cooky's und lege quer durch Deutschland auf. Von Clubs über Großraumdiscos bis Private Bookings. Eine Auswahl meiner Stationen.",
+  epkEyebrow: "Electronic Press Kit",
+  epkIntro:
+    "Alles für Veranstalter und Presse auf einen Blick. Bio, Pressefotos und Logo gibt es auf Anfrage über das Booking.",
+  managementEyebrow: "Management",
+  managementIntro:
+    "Bookings und Presseanfragen für DJ Moogli laufen offiziell über das Management von KOMA Music in Frankfurt. Schnell, direkt und verbindlich.",
 }
 
 export type SoundPillar = { title: string; text: string }

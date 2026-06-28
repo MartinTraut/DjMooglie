@@ -5,8 +5,13 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { Media } from "@/components/shared/media"
 import { getNextEvent } from "@/lib/cms/queries"
+import { siteText } from "@/lib/content"
 
-export async function NextEvent() {
+export async function NextEvent({
+  eyebrow = siteText.eventEyebrow,
+}: {
+  eyebrow?: string
+} = {}) {
   const nextEvent = await getNextEvent()
 
   // Hidden entirely when no gig is scheduled.
@@ -24,7 +29,7 @@ export async function NextEvent() {
           {/* Info */}
           <div className="lg:col-span-7">
             <Reveal>
-              <SectionLabel>Live · Nächster Gig</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
             </Reveal>
 
             <Reveal delay={0.06}>
@@ -90,7 +95,7 @@ export async function NextEvent() {
                 className="aspect-[4/3] w-full"
               />
               {/* Date chip */}
-              <div className="absolute -left-3 -top-3 z-10 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
+              <div className="absolute -left-3 -top-3 z-10 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
                 Save the Date
               </div>
             </div>

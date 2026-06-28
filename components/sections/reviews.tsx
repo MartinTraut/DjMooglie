@@ -3,8 +3,15 @@ import { Container } from "@/components/shared/container"
 import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { getReviews } from "@/lib/cms/queries"
+import { siteText } from "@/lib/content"
 
-export async function Reviews() {
+export async function Reviews({
+  eyebrow = siteText.reviewsEyebrow,
+  intro = siteText.reviewsIntro,
+}: {
+  eyebrow?: string
+  intro?: string
+} = {}) {
   const reviews = await getReviews()
   if (reviews.length === 0) return null
 
@@ -16,7 +23,7 @@ export async function Reviews() {
       <Container>
         <div className="max-w-2xl">
           <Reveal>
-            <SectionLabel>Stimmen · Rezensionen</SectionLabel>
+            <SectionLabel>{eyebrow}</SectionLabel>
           </Reveal>
           <Reveal delay={0.06}>
             <h2 className="mt-5 font-brush text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
@@ -25,8 +32,7 @@ export async function Reviews() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-              Rückmeldungen von Clubs, Veranstaltern und Gästen — der ehrlichste
-              Maßstab für einen DJ.
+              {intro}
             </p>
           </Reveal>
         </div>
@@ -61,7 +67,7 @@ export async function Reviews() {
                     {r.author}
                   </p>
                   {r.role && (
-                    <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                    <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                       {r.role}
                     </p>
                   )}

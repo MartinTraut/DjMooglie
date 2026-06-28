@@ -8,10 +8,17 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber, EchoLine } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-export function GigHistory() {
+export function GigHistory({
+  eyebrow = siteText.gigsEyebrow,
+  intro = siteText.gigsIntro,
+}: {
+  eyebrow?: string
+  intro?: string
+} = {}) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
@@ -44,7 +51,7 @@ export function GigHistory() {
           <div className="relative min-w-0 lg:col-span-4">
             <ChapterNumber n="4" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative lg:sticky lg:top-28">
-              <SectionLabel>Referenzen · Gig History</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05]">
                   Referen<span className="block text-brand">zen</span>
@@ -52,15 +59,13 @@ export function GigHistory() {
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-sm text-pretty text-lg leading-relaxed text-muted-foreground">
-                  Ich bin Resident im Frankfurter Cooky&apos;s und lege quer durch
-                  Deutschland auf. Von Clubs über Großraumdiscos bis Private
-                  Bookings. Eine Auswahl meiner Stationen.
+                  {intro}
                 </p>
               </Reveal>
               <Reveal delay={0.14}>
                 <dl className="mt-8 flex gap-8">
                   <div>
-                    <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                       Clubs
                     </dt>
                     <dd className="mt-1 font-display text-4xl text-brand sm:text-5xl">
@@ -68,7 +73,7 @@ export function GigHistory() {
                     </dd>
                   </div>
                   <div>
-                    <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                    <dt className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                       Städte
                     </dt>
                     <dd className="mt-1 font-display text-4xl text-brand sm:text-5xl">
@@ -93,7 +98,7 @@ export function GigHistory() {
                       <Star className="h-6 w-6 fill-brand" />
                     </span>
                     <div className="min-w-0">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-brand-foreground">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-brand-foreground">
                         {resident.note}
                       </span>
                       <p className="mt-2 truncate font-display text-3xl uppercase leading-none tracking-tight sm:text-4xl">

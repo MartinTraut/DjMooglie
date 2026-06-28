@@ -9,15 +9,18 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { BrushStroke, ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 import type { DuoText } from "@/lib/cms/queries"
 
 export function Boombox({
   image = site.assets.boombox,
   duo = site.duo,
+  eyebrow = siteText.boomboxEyebrow,
 }: {
   image?: string | null
   /** Editable copy from the CMS; falls back to the static duo block. */
   duo?: DuoText
+  eyebrow?: string
 }) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
@@ -52,7 +55,7 @@ export function Boombox({
                   className="aspect-[2/3] w-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
               </motion.div>
-              <div className="absolute -right-3 -top-3 z-20 rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-right-5 sm:-top-5">
+              <div className="absolute -right-3 -top-3 z-20 rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-brand sm:-right-5 sm:-top-5">
                 B2B Duo
               </div>
             </div>
@@ -61,7 +64,7 @@ export function Boombox({
           <div className="relative lg:col-span-7 lg:pl-6">
             <ChapterNumber n="5" className="-top-20 right-0 lg:right-4" />
             <div className="relative">
-              <SectionLabel>Das Duo · B2B</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   Boombox-
@@ -72,7 +75,7 @@ export function Boombox({
               <Reveal delay={0.06}>
                 <p className="mt-4 font-display text-lg uppercase tracking-tight text-foreground sm:text-xl">
                   {duo.tagline}
-                  <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.18em] text-brand">
+                  <span className="mt-1 block font-mono text-xs uppercase tracking-[0.18em] text-brand">
                     {duo.claim}
                   </span>
                 </p>

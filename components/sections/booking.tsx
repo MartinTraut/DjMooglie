@@ -7,13 +7,24 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
 const inputCls =
-  "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-all duration-200 ease-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40 hover:border-muted-foreground/40"
-const labelCls = "mb-2 block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground"
+  "w-full rounded-xl border border-input bg-background px-4 py-3.5 text-base text-foreground placeholder:text-muted-foreground/80 transition-all duration-200 ease-out focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/40 hover:border-muted-foreground/40"
+const labelCls = "mb-2 block font-mono text-[13px] uppercase tracking-[0.14em] text-neutral-200"
 
-export function Booking() {
+export function Booking({
+  eyebrow = siteText.bookingEyebrow,
+  title = siteText.bookingTitle,
+  titleAccent = siteText.bookingTitleAccent,
+  intro = siteText.bookingIntro,
+}: {
+  eyebrow?: string
+  title?: string
+  titleAccent?: string
+  intro?: string
+} = {}) {
   const [sent, setSent] = React.useState(false)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -48,19 +59,17 @@ export function Booking() {
           <div className="relative lg:col-span-5">
             <ChapterNumber n="8" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative">
-              <SectionLabel>Kontakt & Booking</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
-                  Book
+                  {title}
                   <br />
-                  <span className="text-brand">Contact</span>
+                  <span className="text-brand">{titleAccent}</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                  Club-Night, Festival, Firmenevent oder Private Party? Schick mir
-                  die Eckdaten, du bekommst zeitnah eine Rückmeldung, direkt von
-                  mir oder über mein Management.
+                  {intro}
                 </p>
               </Reveal>
 
@@ -74,10 +83,10 @@ export function Booking() {
                       <Mail className="h-4 w-4" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                      <span className="block font-mono text-[13px] uppercase tracking-[0.14em] text-neutral-200">
                         Direkt
                       </span>
-                      <span className="text-sm text-foreground">{site.email}</span>
+                      <span className="text-base text-foreground sm:text-lg">{site.email}</span>
                     </span>
                   </a>
                   <a
@@ -88,10 +97,10 @@ export function Booking() {
                       <Phone className="h-4 w-4" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                      <span className="block font-mono text-[13px] uppercase tracking-[0.14em] text-neutral-200">
                         Management · {site.management.company}
                       </span>
-                      <span className="text-sm text-foreground">{site.management.phone}</span>
+                      <span className="text-base text-foreground sm:text-lg">{site.management.phone}</span>
                     </span>
                   </a>
                 </div>
@@ -144,7 +153,7 @@ export function Booking() {
                   )}
                   {sent ? "Mail geöffnet" : "Anfrage senden"}
                 </button>
-                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                   Öffnet dein Mailprogramm · {site.email}
                 </p>
               </div>

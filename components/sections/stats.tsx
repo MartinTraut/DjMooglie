@@ -75,7 +75,7 @@ export function Stats({
               <p className="font-brush text-4xl leading-none text-brand transition-transform duration-300 group-hover:scale-105 sm:text-5xl">
                 <CountUp value={s.value} />
               </p>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+              <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
                 {s.label}
               </p>
             </motion.div>

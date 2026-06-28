@@ -71,6 +71,28 @@ export async function getSiteText(): Promise<SiteText> {
         ? (d.regions as string[])
         : fallbackText.regions,
     statsQuote: (d.stats_quote as string) || fallbackText.statsQuote,
+    musicEyebrow: (d.music_eyebrow as string) || fallbackText.musicEyebrow,
+    musicTitle: (d.music_title as string) || fallbackText.musicTitle,
+    musicIntro: (d.music_intro as string) || fallbackText.musicIntro,
+    bookingEyebrow: (d.booking_eyebrow as string) || fallbackText.bookingEyebrow,
+    bookingTitle: (d.booking_title as string) || fallbackText.bookingTitle,
+    bookingTitleAccent:
+      (d.booking_title_accent as string) || fallbackText.bookingTitleAccent,
+    bookingIntro: (d.booking_intro as string) || fallbackText.bookingIntro,
+    soundEyebrow: (d.sound_eyebrow as string) || fallbackText.soundEyebrow,
+    aboutEyebrow: (d.about_eyebrow as string) || fallbackText.aboutEyebrow,
+    eventEyebrow: (d.event_eyebrow as string) || fallbackText.eventEyebrow,
+    boomboxEyebrow: (d.boombox_eyebrow as string) || fallbackText.boomboxEyebrow,
+    reviewsEyebrow: (d.reviews_eyebrow as string) || fallbackText.reviewsEyebrow,
+    reviewsIntro: (d.reviews_intro as string) || fallbackText.reviewsIntro,
+    gigsEyebrow: (d.gigs_eyebrow as string) || fallbackText.gigsEyebrow,
+    gigsIntro: (d.gigs_intro as string) || fallbackText.gigsIntro,
+    epkEyebrow: (d.epk_eyebrow as string) || fallbackText.epkEyebrow,
+    epkIntro: (d.epk_intro as string) || fallbackText.epkIntro,
+    managementEyebrow:
+      (d.management_eyebrow as string) || fallbackText.managementEyebrow,
+    managementIntro:
+      (d.management_intro as string) || fallbackText.managementIntro,
   }
 }
 

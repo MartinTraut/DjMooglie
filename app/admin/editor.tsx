@@ -313,6 +313,12 @@ export function Editor({ initial }: { initial: AdminData }) {
               </span>
             </label>
             <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.event_eyebrow}
+              onChange={(v) => setContent({ event_eyebrow: v })}
+              placeholder="Live · Nächster Gig"
+            />
+            <TextField
               label="Datum"
               value={c.event_date}
               onChange={(v) => setContent({ event_date: v })}
@@ -349,6 +355,12 @@ export function Editor({ initial }: { initial: AdminData }) {
           {/* Sound */}
           <SectionCard title="Sound" hint="Deine musikalische Handschrift.">
             <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.sound_eyebrow}
+              onChange={(v) => setContent({ sound_eyebrow: v })}
+              placeholder="Welcher Sound"
+            />
+            <TextField
               label="Intro-Text"
               value={c.sound_intro}
               onChange={(v) => setContent({ sound_intro: v })}
@@ -382,6 +394,12 @@ export function Editor({ initial }: { initial: AdminData }) {
 
           {/* Über mich */}
           <SectionCard title="Über mich" hint="Wer du bist, wo du spielst.">
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.about_eyebrow}
+              onChange={(v) => setContent({ about_eyebrow: v })}
+              placeholder="Über mich"
+            />
             <TextField
               label="Titel"
               value={c.about_title}
@@ -464,7 +482,29 @@ export function Editor({ initial }: { initial: AdminData }) {
           </SectionCard>
 
           {/* Mixtapes */}
-          <SectionCard title="Mixtapes" hint="Deine Mixe (z. B. Mixcloud).">
+          <SectionCard
+            title="Music / Mixtapes"
+            hint="Überschrift des Bereichs und deine Mixe (z. B. Mixcloud)."
+          >
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.music_eyebrow}
+              onChange={(v) => setContent({ music_eyebrow: v })}
+              placeholder="Mixtapes · Mixcloud"
+            />
+            <TextField
+              label="Überschrift"
+              value={c.music_title}
+              onChange={(v) => setContent({ music_title: v })}
+              placeholder="Music"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.music_intro}
+              onChange={(v) => setContent({ music_intro: v })}
+              multiline
+            />
+            <p className="mt-1 text-xs font-medium text-neutral-300">Mixe</p>
             <ListEditor
               items={draft.mixtapes}
               onChange={(v) => setDraft((d) => ({ ...d, mixtapes: v }))}
@@ -501,6 +541,19 @@ export function Editor({ initial }: { initial: AdminData }) {
 
           {/* Rezensionen */}
           <SectionCard title="Rezensionen" hint="Stimmen zufriedener Kunden.">
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.reviews_eyebrow}
+              onChange={(v) => setContent({ reviews_eyebrow: v })}
+              placeholder="Stimmen · Rezensionen"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.reviews_intro}
+              onChange={(v) => setContent({ reviews_intro: v })}
+              multiline
+            />
+            <p className="mt-1 text-xs font-medium text-neutral-300">Stimmen</p>
             <ListEditor
               items={draft.reviews}
               onChange={(v) => setDraft((d) => ({ ...d, reviews: v }))}
@@ -580,6 +633,12 @@ export function Editor({ initial }: { initial: AdminData }) {
             hint="Dein DJ-Duo. Texte für den Boombox-Society Bereich."
           >
             <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.boombox_eyebrow}
+              onChange={(v) => setContent({ boombox_eyebrow: v })}
+              placeholder="Das Duo · B2B"
+            />
+            <TextField
               label="Tagline"
               value={c.duo_tagline}
               onChange={(v) => setContent({ duo_tagline: v })}
@@ -601,6 +660,94 @@ export function Editor({ initial }: { initial: AdminData }) {
               label="Beschreibung"
               value={c.duo_description}
               onChange={(v) => setContent({ duo_description: v })}
+              multiline
+            />
+          </SectionCard>
+
+          {/* Referenzen / Gig History */}
+          <SectionCard
+            title="Referenzen"
+            hint="Kopf des Gig-History-Bereichs."
+          >
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.gigs_eyebrow}
+              onChange={(v) => setContent({ gigs_eyebrow: v })}
+              placeholder="Referenzen · Gig History"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.gigs_intro}
+              onChange={(v) => setContent({ gigs_intro: v })}
+              multiline
+            />
+          </SectionCard>
+
+          {/* EPK */}
+          <SectionCard
+            title="Press Kit (EPK)"
+            hint="Kopf des Electronic-Press-Kit-Bereichs."
+          >
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.epk_eyebrow}
+              onChange={(v) => setContent({ epk_eyebrow: v })}
+              placeholder="Electronic Press Kit"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.epk_intro}
+              onChange={(v) => setContent({ epk_intro: v })}
+              multiline
+            />
+          </SectionCard>
+
+          {/* Management */}
+          <SectionCard
+            title="Management"
+            hint="Kopf des Management-Bereichs."
+          >
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.management_eyebrow}
+              onChange={(v) => setContent({ management_eyebrow: v })}
+              placeholder="Management"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.management_intro}
+              onChange={(v) => setContent({ management_intro: v })}
+              multiline
+            />
+          </SectionCard>
+
+          {/* Booking / Kontakt */}
+          <SectionCard
+            title="Booking / Kontakt"
+            hint="Kopf des Kontaktbereichs."
+          >
+            <TextField
+              label="Kleine Zeile (Eyebrow)"
+              value={c.booking_eyebrow}
+              onChange={(v) => setContent({ booking_eyebrow: v })}
+              placeholder="Kontakt & Booking"
+            />
+            <TextField
+              label="Überschrift (erste Zeile)"
+              value={c.booking_title}
+              onChange={(v) => setContent({ booking_title: v })}
+              placeholder="Book"
+            />
+            <TextField
+              label="Überschrift-Akzent (zweite Zeile, rot)"
+              value={c.booking_title_accent}
+              onChange={(v) => setContent({ booking_title_accent: v })}
+              placeholder="Contact"
+            />
+            <TextField
+              label="Beschreibung"
+              value={c.booking_intro}
+              onChange={(v) => setContent({ booking_intro: v })}
               multiline
             />
           </SectionCard>

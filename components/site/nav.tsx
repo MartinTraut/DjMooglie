@@ -164,7 +164,7 @@ export function Nav() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 }}
-                className="mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground"
+                className="mb-8 inline-flex w-fit items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-foreground"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/70" />
@@ -228,7 +228,7 @@ export function Nav() {
                     <InstagramGlyph className="h-4 w-4" />
                     Instagram
                   </a>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-3.5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-3.5 font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
                     <MapPin className="h-3.5 w-3.5 text-brand" />
                     {site.geo.base}
                   </span>

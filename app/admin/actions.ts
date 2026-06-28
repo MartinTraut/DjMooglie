@@ -56,6 +56,25 @@ export type SiteContentDraft = {
   about_body: string
   regions: string[]
   stats_quote: string
+  music_eyebrow: string
+  music_title: string
+  music_intro: string
+  booking_eyebrow: string
+  booking_title: string
+  booking_title_accent: string
+  booking_intro: string
+  sound_eyebrow: string
+  about_eyebrow: string
+  event_eyebrow: string
+  boombox_eyebrow: string
+  reviews_eyebrow: string
+  reviews_intro: string
+  gigs_eyebrow: string
+  gigs_intro: string
+  epk_eyebrow: string
+  epk_intro: string
+  management_eyebrow: string
+  management_intro: string
   duo_tagline: string
   duo_claim: string
   duo_partner: string

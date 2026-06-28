@@ -8,13 +8,20 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber, EchoLine } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export function Mixtapes({
   items = site.mixtapes,
+  eyebrow = siteText.musicEyebrow,
+  title = siteText.musicTitle,
+  intro = siteText.musicIntro,
 }: {
   items?: readonly { title: string; desc: string; tag: string; href: string }[]
+  eyebrow?: string
+  title?: string
+  intro?: string
 }) {
   const reduce = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
@@ -32,23 +39,22 @@ export function Mixtapes({
       className="relative scroll-mt-20 overflow-hidden border-t border-border py-24 sm:py-32"
     >
       <motion.div style={{ x: echoX }} className="absolute -top-2 left-0 right-0 will-change-transform">
-        <EchoLine text="MUSIC" className="text-[14vw]" />
+        <EchoLine text={title.toUpperCase()} className="text-[14vw]" />
       </motion.div>
 
       <Container className="relative">
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="relative">
             <ChapterNumber n="3" className="-top-14 right-0 translate-x-1/3 lg:-top-20" />
-            <SectionLabel>Mixtapes · Mixcloud</SectionLabel>
+            <SectionLabel>{eyebrow}</SectionLabel>
             <Reveal>
               <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
-                Music
+                {title}
               </h2>
             </Reveal>
             <Reveal delay={0.06}>
               <p className="mt-4 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                Hör rein, bevor du buchst. Eine Auswahl aus der Cooky&apos;s-Booth,
-                tropical Heat und meinen späten Latin-Stunden.
+                {intro}
               </p>
             </Reveal>
           </div>
@@ -90,7 +96,7 @@ export function Mixtapes({
                 <div>
                   <h3 className="font-display text-2xl uppercase leading-none tracking-tight">{m.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.desc}</p>
-                  <span className="mt-6 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
+                  <span className="mt-6 inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-foreground">
                     <span className="grid h-9 w-9 place-items-center rounded-full bg-brand text-brand-foreground transition-transform duration-200 group-hover:scale-110">
                       <Play className="h-4 w-4 translate-x-px fill-current" />
                     </span>

@@ -4,8 +4,15 @@ import { SectionLabel } from "@/components/shared/section-label"
 import { Reveal } from "@/components/shared/reveal"
 import { ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
-export function Management() {
+export function Management({
+  eyebrow = siteText.managementEyebrow,
+  intro = siteText.managementIntro,
+}: {
+  eyebrow?: string
+  intro?: string
+} = {}) {
   const m = site.management
   return (
     <section id="management" className="scroll-mt-20 border-t border-border py-20 sm:py-28">
@@ -19,7 +26,7 @@ export function Management() {
             <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-12 lg:p-16">
               <div className="brand-spot pointer-events-none absolute inset-0 opacity-40" aria-hidden />
               <div className="relative lg:col-span-6">
-              <SectionLabel>Management</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   Vertreten durch
@@ -29,9 +36,7 @@ export function Management() {
               </Reveal>
               <Reveal delay={0.08}>
                 <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
-                  Bookings und Presseanfragen für DJ Moogli laufen offiziell über
-                  das Management von {m.company} in Frankfurt. Schnell, direkt und
-                  verbindlich.
+                  {intro}
                 </p>
               </Reveal>
               <Reveal delay={0.16}>
@@ -100,7 +105,7 @@ function ContactRow({
         {icon}
       </span>
       <span>
-        <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+        <span className="block font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
           {label}
         </span>
         <span className="block text-base text-foreground">{value}</span>

@@ -49,9 +49,14 @@ export default async function Page() {
           <Hero bio={text.heroBio} image={images.hero} />
           <Ticker />
         </div>
-        <NextEvent />
-        <Sound intro={text.soundIntro} pillars={pillars} />
+        <NextEvent eyebrow={text.eventEyebrow} />
+        <Sound
+          eyebrow={text.soundEyebrow}
+          intro={text.soundIntro}
+          pillars={pillars}
+        />
         <About
+          eyebrow={text.aboutEyebrow}
           title={text.aboutTitle}
           titleAccent={text.aboutTitleAccent}
           body={text.aboutBody}
@@ -59,13 +64,30 @@ export default async function Page() {
           image={images.about}
         />
         <Stats quote={text.statsQuote} stats={stats} image={images.stats} />
-        <Mixtapes items={mixtapes} />
-        <GigHistory />
-        <Boombox image={images.boombox} duo={duo} />
-        <EPK images={images.epk} />
-        <Management />
-        <Reviews />
-        <Booking />
+        <Mixtapes
+          items={mixtapes}
+          eyebrow={text.musicEyebrow}
+          title={text.musicTitle}
+          intro={text.musicIntro}
+        />
+        <GigHistory eyebrow={text.gigsEyebrow} intro={text.gigsIntro} />
+        <Boombox
+          image={images.boombox}
+          duo={duo}
+          eyebrow={text.boomboxEyebrow}
+        />
+        <EPK images={images.epk} eyebrow={text.epkEyebrow} intro={text.epkIntro} />
+        <Management
+          eyebrow={text.managementEyebrow}
+          intro={text.managementIntro}
+        />
+        <Reviews eyebrow={text.reviewsEyebrow} intro={text.reviewsIntro} />
+        <Booking
+          eyebrow={text.bookingEyebrow}
+          title={text.bookingTitle}
+          titleAccent={text.bookingTitleAccent}
+          intro={text.bookingIntro}
+        />
         <FAQ items={faqs} />
       </main>
       <Footer />

@@ -9,6 +9,7 @@ import { Reveal } from "@/components/shared/reveal"
 import { BrandLogoImage } from "@/components/logo"
 import { ChapterNumber } from "@/components/shared/brush"
 import { site } from "@/lib/site"
+import { siteText } from "@/lib/content"
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -23,8 +24,12 @@ const facts = [
 
 export function EPK({
   images = site.assets.epk,
+  eyebrow = siteText.epkEyebrow,
+  intro = siteText.epkIntro,
 }: {
   images?: (string | null)[]
+  eyebrow?: string
+  intro?: string
 }) {
   const reduce = useReducedMotion()
   const ref = React.useRef<HTMLDivElement>(null)
@@ -44,7 +49,7 @@ export function EPK({
         <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="relative">
             <ChapterNumber n="6" className="-top-16 right-0 translate-x-1/3" />
-            <SectionLabel>Electronic Press Kit</SectionLabel>
+            <SectionLabel>{eyebrow}</SectionLabel>
             <Reveal>
               <h2 className="relative mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                 Press <span className="text-brand">Kit</span>
@@ -53,8 +58,7 @@ export function EPK({
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-sm text-pretty text-base leading-relaxed text-foreground/80 sm:pb-2 sm:text-right sm:text-lg">
-              Alles für Veranstalter und Presse auf einen Blick. Bio, Pressefotos
-              und Logo gibt es auf Anfrage über das Booking.
+              {intro}
             </p>
           </Reveal>
         </div>

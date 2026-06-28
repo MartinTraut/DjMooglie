@@ -13,9 +13,11 @@ import { siteText, soundPillars, type SoundPillar } from "@/lib/content"
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export function Sound({
+  eyebrow = siteText.soundEyebrow,
   intro = siteText.soundIntro,
   pillars = soundPillars,
 }: {
+  eyebrow?: string
   intro?: string
   pillars?: SoundPillar[]
 }) {
@@ -51,7 +53,7 @@ export function Sound({
           <div className="relative lg:col-span-5">
             <ChapterNumber n="1" className="-top-16 -left-2 lg:-left-6" />
             <div className="relative lg:sticky lg:top-28">
-              <SectionLabel>Welcher Sound</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <motion.div style={{ y: headY }} className="will-change-transform">
                 <Reveal>
                   <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05] [hyphens:none]">

@@ -12,12 +12,14 @@ import { site } from "@/lib/site"
 import { siteText } from "@/lib/content"
 
 export function About({
+  eyebrow = siteText.aboutEyebrow,
   title = siteText.aboutTitle,
   titleAccent = siteText.aboutTitleAccent,
   body = siteText.aboutBody,
   regions = siteText.regions,
   image = site.assets.portrait,
 }: {
+  eyebrow?: string
   title?: string
   titleAccent?: string
   body?: string
@@ -43,7 +45,7 @@ export function About({
           <div className="relative order-2 lg:order-1 lg:col-span-7 lg:pr-6">
             <ChapterNumber n="2" className="-top-20 left-0 lg:-left-4" />
             <div className="relative">
-              <SectionLabel>{site.about.kicker}</SectionLabel>
+              <SectionLabel>{eyebrow}</SectionLabel>
               <Reveal>
                 <h2 className="mt-5 font-brush text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05]">
                   {title}
@@ -91,7 +93,7 @@ export function About({
                   className="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 />
               </motion.div>
-              <div className="absolute -left-3 -top-3 z-20 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
+              <div className="absolute -left-3 -top-3 z-20 -rotate-3 rounded-full border border-brand bg-background px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-brand sm:-left-5 sm:-top-5">
                 DJ Moogli
               </div>
             </div>
