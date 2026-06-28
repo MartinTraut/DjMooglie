@@ -147,7 +147,7 @@ function MapCard({ address, query }: { address: string; query: string }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Standort auf Google Maps ansehen: ${address}`}
-      className="group mt-4 block overflow-hidden rounded-3xl border border-border bg-[#0a0a0a] transition-colors duration-300 hover:border-brand/50"
+      className="group relative mt-4 block overflow-hidden rounded-3xl border border-border bg-[#0a0a0a] transition-colors duration-300 hover:border-brand/50"
     >
       <div className="relative aspect-[16/9]">
         <div className="hairline-grid absolute inset-0 opacity-50" aria-hidden />
@@ -177,6 +177,15 @@ function MapCard({ address, query }: { address: string; query: string }) {
           <ArrowUpRight className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>
       </div>
+      {/* Mirror the top glow into the two bottom corners so they don't read dead. */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3"
+        aria-hidden
+        style={{
+          background:
+            "radial-gradient(45% 90% at 0% 100%, color-mix(in oklch, var(--brand) 24%, transparent), transparent 68%), radial-gradient(45% 90% at 100% 100%, color-mix(in oklch, var(--brand) 24%, transparent), transparent 68%)",
+        }}
+      />
     </a>
   )
 }
